@@ -8,7 +8,7 @@ function App() {
     <>
       <Header />
       <div className="bg-grey">Hello World</div>
-      <div className=" p-10 bg-red-100">
+      <div className=" p-10">
         <Button variant={"default"}>Click Me!</Button>
         <Button variant={"destructive"}>Click Me!</Button>
         <Button variant={"ghost"}>Click Me!</Button>
