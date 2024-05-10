@@ -8,7 +8,7 @@ const Header = (props: HeaderType) => {
   return (
     <>
       <header className="bg-gray-100">
-        <div className="container mx-auto px-0">
+        <div className="px-4 mx-auto">
           <nav className="flex items-center justify-between">
             <a href="#" className="text-lg font-bold py-4">
               {headerName}
