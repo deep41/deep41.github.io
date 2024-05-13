@@ -1,5 +1,5 @@
-import Footer from "@/components/portfolio/footer1";
-import Header from "@/components/portfolio/header1";
+import Footer from "@/components/portfolio/footer";
+import Header from "@/components/portfolio/header";
 import About from "@/components/portfolio/about";
 import Project from "@/components/portfolio/project";
 import Work from "@/components/portfolio/work";
