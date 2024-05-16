@@ -36,4 +36,4 @@ jobs:
       uses: gh-pages/deploy@v1
       with:
         remote_branch: main
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TOKEN }}
