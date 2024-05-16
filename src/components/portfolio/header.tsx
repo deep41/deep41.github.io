@@ -1,3 +1,5 @@
+import { IoMdDownload } from "react-icons/io";
+
 type HeaderType = {
   headerName: string;
   navLinks?: { name: string; link: string }[];
@@ -18,13 +20,13 @@ const Header = (props: HeaderType) => {
                 navLinks.map((item) => (
                   <li>
                     <a
-                      className="py-4 px-2 text-gray-600 hover:text-gray-900 hover:bg-gray-200 transition duration-100 ease-in-out rounded-md "
-                      // onClick={(e) => {
-                      //   e.preventDefault();
-                      // }}
+                      className="py-2 px-4 text-gray-600 flex flex-row items-center rounded-md outline hover:text-gray-900 hover:bg-gray-200 transition duration-100 ease-in-out outline-gray-400 hover:outline-gray-700 "
                       href={item.link}
                       target="_blank"
                     >
+                      <span className="pr-2">
+                        <IoMdDownload className="h-4 w-4" />
+                      </span>
                       {item.name}
                     </a>
                   </li>

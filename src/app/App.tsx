@@ -15,7 +15,7 @@ function App() {
           headerName="Portfolio"
           navLinks={[
             {
-              name: "Resume Download",
+              name: "Resume",
               link: "https://bit.ly/3V2HZDR",
             },
             // { name: "Blog", link: "" },
