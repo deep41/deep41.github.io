@@ -3,6 +3,8 @@ import { Textarea } from "@/components/ui/textarea";
 type ContactType = {};
 
 const Contact = (props: ContactType) => {
+  const {} = props;
+
   return (
     <>
       <div className="px-6 py-4">

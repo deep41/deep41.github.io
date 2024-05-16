@@ -13,6 +13,8 @@ const aboutData = {
 type AboutType = {};
 
 const About = (props: AboutType) => {
+  const {} = props;
+
   return (
     <>
       <div className="px-6 py-2">

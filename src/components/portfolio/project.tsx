@@ -5,6 +5,8 @@ const projectList = [
 ];
 
 const Project = (props: ProjectType) => {
+  const {} = props;
+
   return (
     <>
       <div className="px-6 py-2">

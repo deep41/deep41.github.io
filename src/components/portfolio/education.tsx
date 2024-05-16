@@ -32,6 +32,8 @@ const educationList = [
 ];
 
 const Education = (props: EducationType) => {
+  const {} = props;
+
   return (
     <>
       <div className="px-6 md:py-2 ">

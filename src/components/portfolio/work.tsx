@@ -19,6 +19,8 @@ const workList = [
 ];
 
 const Work = (props: WorkType) => {
+  const {} = props;
+
   return (
     <>
       <div className="px-6 md:py-2">
