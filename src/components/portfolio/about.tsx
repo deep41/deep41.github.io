@@ -16,7 +16,7 @@ const About = (props: AboutType) => {
   return (
     <>
       <div className="px-6 py-2">
-        <div className="md:flex md:flex-direction-row flex-direction-column items-center mb-8">
+        <div className="md:flex md:flex-direction-row flex-direction-column items-center">
           <Avatar className="h-40 w-40 md:h-60 md:w-60 m-4 md:mb-0 md:text-center mx-auto">
             <AvatarImage src="https://avatars.githubusercontent.com/u/22258487?v=4" />
             <AvatarFallback>DR</AvatarFallback>

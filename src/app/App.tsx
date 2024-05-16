@@ -9,28 +9,31 @@ import Certifications from "@/components/portfolio/certifications";
 
 function App() {
   return (
-    <>
+    <div className="bg-gray-100">
       <Header
         headerName="Portfolio"
         navLinks={[
-          { name: "Resume Download", link: "" },
-          { name: "Blog", link: "" },
+          {
+            name: "Resume Download",
+            link: "https://bit.ly/3V2HZDR",
+          },
+          // { name: "Blog", link: "" },
         ]}
       />
-      <div className="container mx-auto p-4  shadow-xl">
+      <div className="container mx-auto p-4 shadow-xl bg-white rounded-lg max-w-[1000px]">
         <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
           <div className="md:col-span-2 lg:col-span-3">
             <About />
             <Certifications />
             <Education />
-            <Project />
+            {/* <Project /> */}
             <Work />
-            <Contact />
+            {/* <Contact /> */}
             {/* <Footer /> */}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

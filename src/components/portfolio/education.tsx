@@ -34,15 +34,18 @@ const educationList = [
 const Education = (props: EducationType) => {
   return (
     <>
-      <div className="px-6 py-2">
+      <div className="px-6 md:py-2 ">
         <div className="font-bold text-2xl">Education</div>
         {educationList.map((item) => (
-          <div className="px-6 py-2">
-            <div className="md:flex md:flex-direction-row flex-direction-column items-start mb-8">
+          <div className="md:px-6 mt-2 py-2 ">
+            {/* Hover transition
+                rounded-lg hover:bg-gray-100/70 hover:shadow-sm hover:drop-shadow-sm transition duration-100 ease-in-out
+            */}
+            <div className="md:flex md:flex-direction-row flex-direction-column items-start ">
               <img
                 src={item.image}
                 alt={item.imagealt}
-                className="max-h-32 max-w-32 p-2 m-2 mx-auto md:mx-0"
+                className="h-32 w-32 p-2 m-2 mx-auto md:mx-0 aspect-square"
               />
               <div className="md:ml-12 ml-0 w-full">
                 <div className="flex flex-col items-baseline md:flex-row  md:justify-between">
@@ -54,10 +57,7 @@ const Education = (props: EducationType) => {
                 <div className="text-sm italic">{item.degree}</div>
                 {item.points &&
                   item.points.map((point) => (
-                    <p className="text-gray-600 items-baseline">
-                      <span className="text-2xl">•</span>
-                      {point}
-                    </p>
+                    <p className="text-gray-600 items-baseline">{point}</p>
                   ))}
               </div>
             </div>

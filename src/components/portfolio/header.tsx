@@ -17,14 +17,16 @@ const Header = (props: HeaderType) => {
               {navLinks &&
                 navLinks.map((item) => (
                   <li>
-                    <button
+                    <a
                       className="py-4 px-2 text-gray-600 hover:text-gray-900 hover:bg-gray-200 transition duration-100 ease-in-out rounded-md "
-                      onClick={(e) => {
-                        e.preventDefault();
-                      }}
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      // }}
+                      href={item.link}
+                      target="_blank"
                     >
                       {item.name}
-                    </button>
+                    </a>
                   </li>
                 ))}
             </ul>
