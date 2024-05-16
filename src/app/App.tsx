@@ -5,6 +5,7 @@ import Project from "@/components/portfolio/project";
 import Work from "@/components/portfolio/work";
 import Contact from "@/components/portfolio/contact";
 import Education from "@/components/portfolio/education";
+import Certifications from "@/components/portfolio/certifications";
 
 function App() {
   return (
@@ -16,12 +17,19 @@ function App() {
           { name: "Blog", link: "" },
         ]}
       />
-      <About />
-      <Education />
-      <Project />
-      <Work />
-      <Contact />
-      <Footer />
+      <div className="container mx-auto p-4  shadow-xl">
+        <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
+          <div className="md:col-span-2 lg:col-span-3">
+            <About />
+            <Certifications />
+            <Education />
+            <Project />
+            <Work />
+            <Contact />
+            {/* <Footer /> */}
+          </div>
+        </div>
+      </div>
     </>
   );
 }
