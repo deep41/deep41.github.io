@@ -9,7 +9,7 @@ import Certifications from "@/components/portfolio/certifications";
 
 function App() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 pb-8">
       <Header
         headerName="Portfolio"
         navLinks={[
