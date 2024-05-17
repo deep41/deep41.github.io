@@ -13,8 +13,22 @@ const workList = [
     ],
     image:
       "https://scontent-atl3-2.xx.fbcdn.net/v/t39.30808-6/307377964_10159766756760985_6467272317538767870_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_ohc=dZesOc933y8Q7kNvgENZKBE&_nc_ht=scontent-atl3-2.xx&oh=00_AYCHRIC9QMs27b9jceWiY7nQRU22B9tQzXupoZd0jurgcw&oe=664C1B83",
-    imagealt: "Temp",
+    imagealt: "HCL Technologies Limited",
     title: "Software Engineer",
+  },
+  {
+    name: "Center for Artificial Intelligence and Robotics, DRDO",
+    from: "Mar 2019",
+    to: "Jun 2019",
+    points: [
+      "Migrated a monolithic frontend application into micro frontends achieving a speed-up of over 90% in lighthouse metrics. ",
+      "Mentored multiple teams on migrating to cloud/on-premise platform built on Kubernetes, spearheading the development of impactful Proof of Concepts that addressed technical challenges faced by different teams.",
+      "Implemented an HTML5 time series viewer for uterine activity and fetal heart rate data visualization with interactive annotation features, achieving a 70% speed-up in annotator workflows.",
+      "Upgraded Angular frontend projects, achieving a 20% improvement in load times and a 40% reduction in first load bundle size, while significantly enhancing system security by remediating critical vulnerabilities.",
+    ],
+    image: "cair.png",
+    imagealt: "CAIR",
+    title: "Project Trainee",
   },
 ];
 
