@@ -21,10 +21,8 @@ const workList = [
     from: "Mar 2019",
     to: "Jun 2019",
     points: [
-      "Migrated a monolithic frontend application into micro frontends achieving a speed-up of over 90% in lighthouse metrics. ",
-      "Mentored multiple teams on migrating to cloud/on-premise platform built on Kubernetes, spearheading the development of impactful Proof of Concepts that addressed technical challenges faced by different teams.",
-      "Implemented an HTML5 time series viewer for uterine activity and fetal heart rate data visualization with interactive annotation features, achieving a 70% speed-up in annotator workflows.",
-      "Upgraded Angular frontend projects, achieving a 20% improvement in load times and a 40% reduction in first load bundle size, while significantly enhancing system security by remediating critical vulnerabilities.",
+      "Engineered a cutting-edge NLP model utilizing the SNLI Dataset, Sentence Embedding, transfer learning, and BiLSTM techniques to accurately identify fake news articles.",
+      "Developed a bot to collect news articles from diverse sources and integrated it with a predictive model to classify them as genuine or fake, enabling for fake news identification.",
     ],
     image: "cair.png",
     imagealt: "CAIR",
