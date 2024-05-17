@@ -55,7 +55,7 @@ const LinkedInButton = (props: { link?: string }) => {
 
 const aboutData = {
   title:
-    "I'm Deepak Rajendran, a software developer with a passion forbuilding innovative solutions.",
+    "I'm Deepak Rajendran, a software developer with a passion for building innovative solutions.",
   points: [
     "Transforming ideas into innovative solutions, I'm a driven software developer with a passion for building cutting-edge applications.",
     "With a strong foundation in computer science and 1.7 years of experience, I excel in web development, backend engineering, and cloud technologies.",

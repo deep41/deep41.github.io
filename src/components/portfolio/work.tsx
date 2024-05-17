@@ -24,7 +24,7 @@ const workList = [
       "Engineered a cutting-edge NLP model utilizing the SNLI Dataset, Sentence Embedding, transfer learning, and BiLSTM techniques to accurately identify fake news articles.",
       "Developed a bot to collect news articles from diverse sources and integrated it with a predictive model to classify them as genuine or fake, enabling for fake news identification.",
     ],
-    image: "cair.png",
+    image: "/cair.png",
     imagealt: "CAIR",
     title: "Project Trainee",
   },
