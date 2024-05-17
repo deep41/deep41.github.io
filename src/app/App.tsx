@@ -24,7 +24,10 @@ function App() {
         <div className="container mx-auto p-4 shadow-xl bg-white rounded-lg max-w-[1000px]">
           <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
             <div className="md:col-span-2 lg:col-span-3">
-              <About />
+              <About
+                github="https://github.com/deepr41"
+                linkedin="https://linkedin.com/in/deepr41"
+              />
               <Certifications />
               <Education />
               {/* <Project /> */}
