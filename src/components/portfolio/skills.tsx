@@ -11,7 +11,7 @@ const Skills = (props: SkillsType) => {
         <div className="flex flex-row flex-wrap gap-2">
           {skills &&
             skills.map((item) => (
-              <div className="p-2 bg-blue-950 text-white hover:scale-110 transition font-mono text-sm">
+              <div className="p-2 bg-blue-950 text-white hover:scale-110 transition font-mono text-sm cursor-default">
                 {item}
               </div>
             ))}

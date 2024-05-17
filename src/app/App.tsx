@@ -16,6 +16,7 @@ const skillsList = [
   "React",
   "Angular",
   "NodeJs",
+  "Jest",
   "ExpressJs",
   "GraphQL",
   "Websockets",
@@ -71,6 +72,7 @@ function App() {
               {/* <Project /> */}
               <Work />
               {/* <Contact /> */}
+              <div className="h-10" />
             </div>
           </div>
         </div>

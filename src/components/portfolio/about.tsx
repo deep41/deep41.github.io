@@ -5,13 +5,13 @@ const GitHubButton = (props: { link?: string }) => {
   const { link } = props;
   return (
     <a
-      className="bg-black shadow-md px-3 font-medium py-2 flex items-center justify-center rounded-md outline-none focus:scale-110 hover:scale-105 transition cursor-pointer borderBlack text-white mb-2 sm:mb-0"
+      className="px-3 font-medium py-2 flex items-center justify-center rounded-md outline-none focus:scale-110 hover:scale-105 transition cursor-pointer borderBlack text-black mb-2 sm:mb-0 hover:outline hover:outline-black hover:outline-[0.5px] focus:outline focus:outline-black focus:outline-[0.5px]"
       href={link}
       target="_blank"
     >
       <svg
         stroke="white"
-        fill="white"
+        fill="black"
         stroke-width="0"
         viewBox="0 0 496 512"
         className="mr-2"
@@ -31,13 +31,13 @@ const LinkedInButton = (props: { link?: string }) => {
   return (
     <>
       <a
-        className="bg-black shadow-md px-3 font-medium py-2 flex items-center justify-center rounded-md outline-none focus:scale-110 hover:scale-105 transition cursor-pointer borderBlack text-white mb-2 sm:mb-0"
+        className="px-3 font-medium py-2 flex items-center justify-center rounded-md outline-none focus:scale-110 hover:scale-105 transition cursor-pointer borderBlack text-black mb-2 sm:mb-0 hover:outline hover:outline-black hover:outline-[0.5px] focus:outline focus:outline-black focus:outline-[0.5px]"
         href={link}
         target="_blank"
       >
         <svg
           stroke="white"
-          fill="white"
+          fill="black"
           stroke-width="0"
           viewBox="0 0 16 16"
           className="mr-2"
