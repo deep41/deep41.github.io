@@ -51,20 +51,23 @@ function App() {
       <div className="bg-gray-100 lg:pb-8">
         <Header
           headerName="Portfolio"
-          navLinks={[
-            {
-              name: "Resume",
-              link: "https://bit.ly/3V2HZDR",
-            },
-            // { name: "Blog", link: "" },
-          ]}
+          navLinks={
+            [
+              // {
+              //   name: "Resume",
+              //   link: "https://bit.ly/3V2HZDR",
+              // },
+              // { name: "Blog", link: "" },
+            ]
+          }
         />
         <div className="container mx-auto shadow-xl bg-white rounded-lg max-w-[1000px]">
           <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
             <div className="md:col-span-2 lg:col-span-3">
               <About
-                github="https://github.com/deepr41"
-                linkedin="https://linkedin.com/in/deepr41"
+                githubLink="https://github.com/deepr41"
+                linkedinLink="https://linkedin.com/in/deepr41"
+                resumeLink="https://bit.ly/3V2HZDR"
               />
               <Skills skills={skillsList} />
               <Certifications />
