@@ -3,8 +3,8 @@ type WorkType = {};
 const workList = [
   {
     name: "HCL Technologies Limited",
-    from: "May 2024",
-    to: "Dec 2023",
+    from: "Jan 2022",
+    to: "July 2023",
     points: [
       "Migrated a monolithic frontend application into micro frontends achieving a speed-up of over 90% in lighthouse metrics. ",
       "Mentored multiple teams on migrating to cloud/on-premise platform built on Kubernetes, spearheading the development of impactful Proof of Concepts that addressed technical challenges faced by different teams.",
