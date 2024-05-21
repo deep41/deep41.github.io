@@ -11,8 +11,7 @@ const educationList = [
       "Hack NC 2024 Winner",
       "Tech Crew member at University Theatre",
     ],
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/North_Carolina_State_University_Athletic_logo.svg/1200px-North_Carolina_State_University_Athletic_logo.svg.png",
+    image: "/ncsu_logo.png",
     imagealt: "NCSU logo",
   },
   {
@@ -25,8 +24,7 @@ const educationList = [
       "Hackathons won: init 2017",
       "Department Fest Organiser",
     ],
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/5/5a/Ramaiah_Institutions_Logo.png",
+    image: "/rit_logo.png",
     imagealt: "RIT logo",
   },
 ];
