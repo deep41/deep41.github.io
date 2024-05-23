@@ -1,11 +1,11 @@
 import { cn } from "@/lib/utils";
 
-const GitHubIcon = (props: { className?: string }) => {
-  const { className } = props;
+const GitHubIcon = (props: { className?: string; fill?: string }) => {
+  const { className, fill } = props;
   return (
     <svg
       stroke="white"
-      fill="black"
+      fill={fill || "black"}
       stroke-width="0"
       viewBox="0 0 496 512"
       className={cn("mr-2", className)}

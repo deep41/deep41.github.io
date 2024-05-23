@@ -1,7 +1,7 @@
 // import Footer from "@/components/portfolio/footer";
 import Header from "@/components/portfolio/header";
 import About from "@/components/portfolio/about";
-// import Project from "@/components/portfolio/project";
+import Project from "@/components/portfolio/project";
 import Work from "@/components/portfolio/work";
 // import Contact from "@/components/portfolio/contact";
 import Education from "@/components/portfolio/education";
@@ -70,9 +70,9 @@ function App() {
                 resumeLink="https://bit.ly/3V2HZDR"
               />
               <Skills skills={skillsList} />
+              <Project />
               <Certifications />
               <Education />
-              {/* <Project /> */}
               <Work />
               {/* <Contact /> */}
               <div className="h-10" />
