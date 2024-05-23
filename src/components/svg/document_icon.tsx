@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { IoDocument } from "react-icons/io5";
 
-const ResumeIcon = (props: { className?: string }) => {
+const DocumentIcon = (props: { className?: string }) => {
   const { className } = props;
   return (
     <div>
@@ -10,4 +10,4 @@ const ResumeIcon = (props: { className?: string }) => {
   );
 };
 
-export default ResumeIcon;
+export default DocumentIcon;

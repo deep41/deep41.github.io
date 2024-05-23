@@ -1,8 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import GitHubIcon from "../svg/github_icon";
 import ActionButton from "../ui/actionbutton";
-import ResumeIcon from "../svg/resume_icon";
 import LinkedInIcon from "../svg/linkedin_icon";
+import DocumentIcon from "../svg/document_icon";
 
 const aboutData = {
   title:
@@ -51,7 +51,7 @@ const About = (props: AboutType) => {
               )}
               {resumeLink && (
                 <ActionButton link={resumeLink}>
-                  <ResumeIcon />
+                  <DocumentIcon />
                   Resume
                 </ActionButton>
               )}
