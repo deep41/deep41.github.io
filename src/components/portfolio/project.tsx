@@ -19,6 +19,17 @@ const projectList: ProjectItemProps[] = [
     ],
     github: "https://github.com/deepr41/Spaces",
   },
+  {
+    name: "Mixxcloud",
+    description:
+      "This project focuses on creating a cloud environment equipped with Load Balancer (LB) services in both Infrastructure-as-a-Service (IaaS) and Load-Balancer-as-a-Service (LBaaS) models, integrated with an auto-scaling interface. It supports tenants in creating virtual machines within specified subnets and virtual private clouds (VPCs), and allows them to configure load balancing and auto-scaling schemes through an accessible interface. Mixxcloud's architecture includes high availability mechanisms and security features such as DDoS protection and custom firewall rules, ensuring robust and secure cloud operations.",
+    images: [],
+    github: "https://github.com/deepr41/mixxcloud",
+    report:
+      "https://docs.google.com/document/d/1vL2F0CGbqgDim4xNWZG7HB-zksPmqTzY/edit?usp=sharing&ouid=113056820402321163892&rtpof=true&sd=true",
+    slides:
+      "https://docs.google.com/presentation/d/1H0kS04bjQtDhTDMm8onlcNIrSSVed_Uj/edit?usp=sharing&ouid=113056820402321163892&rtpof=true&sd=true",
+  },
 ];
 
 const Project = (props: ProjectType) => {
@@ -36,6 +47,8 @@ const Project = (props: ProjectType) => {
               images={item.images}
               github={item.github}
               demo={item.demo}
+              report={item.report}
+              slides={item.slides}
             />
           ))}
         </div>
