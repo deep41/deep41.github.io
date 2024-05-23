@@ -24,8 +24,11 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Print dir
+        run: ls -al
+
       - name: Create CNAME
-        run: cp CNAME >> ./dist/CNAME
+        run: cp ./CNAME >> ./dist/CNAME
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
