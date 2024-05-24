@@ -21,7 +21,7 @@ const educationList = [
     to: "June 2019",
     points: [
       "CGPA: 8.66",
-      "Hackathons won: init 2017",
+      "Hackathons won: init 2017, EMPYREAL 2017",
       "Department Fest Organiser",
     ],
     image: "/rit_logo.png",

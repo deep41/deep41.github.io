@@ -11,6 +11,8 @@ import GitHubIcon from "../../svg/github_icon";
 import "./project_item.css";
 import DocumentIcon from "@/components/svg/document_icon";
 import SlidesIcon from "@/components/svg/slides_icon";
+import LinkIcon from "@/components/svg/link_icon";
+import VideoIcon from "@/components/svg/video_icon";
 
 export type ProjectItemProps = {
   name: string;
@@ -20,10 +22,12 @@ export type ProjectItemProps = {
   demo?: string;
   report?: string;
   slides?: string;
+  video?: string;
 };
 
 const ProjectItem = (props: ProjectItemProps) => {
-  const { name, description, images, github, demo, report, slides } = props;
+  const { name, description, images, github, demo, report, slides, video } =
+    props;
   return (
     <>
       <div className="rounded-md overflow-hidden hover:shadow-md outline outline-[0.2px] outline-gray-200  transition bg-white">
@@ -44,7 +48,7 @@ const ProjectItem = (props: ProjectItemProps) => {
         </Carousel>
         <div className="px-6 py-4">
           <div className="flex flex-row justify-between items-baseline flex-wrap gap-1 mb-2">
-            <div className="font-bold text-xl">{name}</div>
+            <div className="font-bold text-xl pr-2">{name}</div>
             <div className="flex flex-row gap-2">
               {github && (
                 <div className="no-padding-div">
@@ -57,7 +61,7 @@ const ProjectItem = (props: ProjectItemProps) => {
               {demo && (
                 <div className="no-padding-div">
                   <ActionButton link={demo} className=" bg-black">
-                    <GitHubIcon className="" fill="white" />
+                    <LinkIcon className="text-white" />
                     <div className="text-sm font-mono text-white">Demo</div>
                   </ActionButton>
                 </div>
@@ -75,6 +79,14 @@ const ProjectItem = (props: ProjectItemProps) => {
                   <ActionButton link={slides} className=" bg-black">
                     <SlidesIcon />
                     <div className="text-sm font-mono text-white">Slides</div>
+                  </ActionButton>
+                </div>
+              )}
+              {video && (
+                <div className="no-padding-div">
+                  <ActionButton link={video} className=" bg-black">
+                    <VideoIcon className="text-white" />
+                    <div className="text-sm font-mono text-white">Video</div>
                   </ActionButton>
                 </div>
               )}
