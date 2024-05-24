@@ -70,6 +70,14 @@ const projectList: ProjectItemProps[] = [
     video: "https://www.youtube.com/watch?v=3-w7-B_R0c4",
   },
   {
+    name: "Cloud Computing Architecture",
+    description:
+      "This report is an experiment towards architecting cloud applications. The proposed SaaS project aims to enhance patient engagement in medical diagnostics by providing a seamless digital experience. The platform allows patients to schedule various medical tests and access their results online, with options to share these securely with physicians. It includes a website and mobile application with integrated customer support and feedback mechanisms, emphasizing data security, regulatory compliance, high availability, low latency, and cost-efficiency. Future capabilities may include health tracking, aligning with the project's goal to revolutionize the patient experience in the medical diagnostics sector.",
+    images: [],
+    report:
+      "https://docs.google.com/document/d/14ONAjfBluLfWNEfUhhcws66TrMhR--XX/edit?usp=sharing&ouid=113056820402321163892&rtpof=true&sd=true",
+  },
+  {
     name: "Portfolio",
     description:
       "This website is built using React, Vite, and Tailwind CSS, with CI/CD pipelines managed through GitHub Actions. For inquiries, please contact me using the information provided at the bottom of the site.",
