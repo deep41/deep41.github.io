@@ -49,7 +49,7 @@ const ProjectItem = (props: ProjectItemProps) => {
         <div className="px-6 py-4">
           <div className="flex flex-row justify-between items-baseline flex-wrap gap-1 mb-2">
             <div className="font-bold text-xl pr-2">{name}</div>
-            <div className="flex flex-row gap-2">
+            <div className="flex flex-row flex-wrap gap-x-2 gap-y-1">
               {github && (
                 <div className="no-padding-div">
                   <ActionButton link={github} className=" bg-black">
