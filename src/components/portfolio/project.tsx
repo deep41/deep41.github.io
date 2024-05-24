@@ -75,7 +75,7 @@ const projectList: ProjectItemProps[] = [
       "This website is built using React, Vite, and Tailwind CSS, with CI/CD pipelines managed through GitHub Actions. For inquiries, please contact me using the information provided at the bottom of the site.",
     images: ["/assets/portfolio/portfolio-1.png"],
     github: "https://github.com/deepr41/deepr41.github.io",
-    demo: "/",
+    demo: "https://deepr41.github.io",
   },
   {
     name: "Aircraft Maintenance Prediction",
