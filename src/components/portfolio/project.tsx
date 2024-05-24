@@ -25,6 +25,7 @@ const projectList: ProjectItemProps[] = [
     report:
       "https://drive.google.com/file/d/1cBGm5xjfsGuXaBZpHy8fiWWzwpYMydSa/view?usp=sharing",
     demo: "https://drive.google.com/drive/folders/13bMdHkV0nsN7rQ8pC_l9rgH7b8sFDvLP?usp=sharing",
+    certificate: "https://doi.org/10.1166/jctn.2020.9003",
   },
   {
     name: "Spaces",
@@ -126,6 +127,7 @@ const Project = (props: ProjectType) => {
               report={item.report}
               slides={item.slides}
               video={item.video}
+              certificate={item.certificate}
             />
           ))}
         </div>

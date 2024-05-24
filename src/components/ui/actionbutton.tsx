@@ -11,7 +11,7 @@ const ActionButton = (props: ActionButtonType) => {
   return (
     <a
       className={cn(
-        "px-3 font-medium py-2 flex items-center justify-center rounded-md outline-none focus:scale-110 hover:scale-105 transition cursor-pointer borderBlack text-black mb-2 sm:mb-0 hover:outline hover:outline-black hover:outline-[0.5px] focus:outline focus:outline-black focus:outline-[0.5px]",
+        "px-3 font-medium py-2 flex items-center justify-center rounded-md outline-none focus:scale-110 hover:scale-105 transition cursor-pointer borderBlack text-black hover:outline hover:outline-black hover:outline-[0.5px] focus:outline focus:outline-black focus:outline-[0.5px]",
         className
       )}
       href={link}

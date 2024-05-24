@@ -13,6 +13,7 @@ import DocumentIcon from "@/components/svg/document_icon";
 import SlidesIcon from "@/components/svg/slides_icon";
 import LinkIcon from "@/components/svg/link_icon";
 import VideoIcon from "@/components/svg/video_icon";
+import CertificateIcon from "@/components/svg/certificate_icon";
 
 export type ProjectItemProps = {
   name: string;
@@ -23,11 +24,21 @@ export type ProjectItemProps = {
   report?: string;
   slides?: string;
   video?: string;
+  certificate?: string;
 };
 
 const ProjectItem = (props: ProjectItemProps) => {
-  const { name, description, images, github, demo, report, slides, video } =
-    props;
+  const {
+    name,
+    description,
+    images,
+    github,
+    demo,
+    report,
+    slides,
+    video,
+    certificate,
+  } = props;
   return (
     <>
       <div className="rounded-md overflow-hidden hover:shadow-md outline outline-[0.2px] outline-gray-200  transition bg-white">
@@ -49,7 +60,7 @@ const ProjectItem = (props: ProjectItemProps) => {
         <div className="px-6 py-4">
           <div className="flex flex-row justify-between items-baseline flex-wrap gap-1 mb-2">
             <div className="font-bold text-xl pr-2">{name}</div>
-            <div className="flex flex-row flex-wrap gap-x-2 gap-y-1">
+            <div className="flex flex-row flex-wrap gap-x-2 gap-y-2">
               {github && (
                 <div className="no-padding-div">
                   <ActionButton link={github} className=" bg-black">
@@ -87,6 +98,14 @@ const ProjectItem = (props: ProjectItemProps) => {
                   <ActionButton link={video} className=" bg-black">
                     <VideoIcon className="text-white" />
                     <div className="text-sm font-mono text-white">Video</div>
+                  </ActionButton>
+                </div>
+              )}
+              {certificate && (
+                <div className="no-padding-div">
+                  <ActionButton link={certificate} className=" bg-black">
+                    <CertificateIcon className="text-white" />
+                    <div className="text-sm font-mono text-white">Paper</div>
                   </ActionButton>
                 </div>
               )}
