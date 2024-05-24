@@ -58,58 +58,56 @@ const ProjectItem = (props: ProjectItemProps) => {
           <CarouselNext className="right-2 disabled:hidden" />
         </Carousel>
         <div className="px-6 py-4">
-          <div className="flex flex-row justify-between items-baseline flex-wrap gap-1 mb-2">
-            <div className="font-bold text-xl pr-2">{name}</div>
-            <div className="flex flex-row flex-wrap gap-x-2 gap-y-2">
-              {github && (
-                <div className="no-padding-div">
-                  <ActionButton link={github} className=" bg-black">
-                    <GitHubIcon className="" fill="white" />
-                    <div className="text-sm font-mono text-white">GitHub</div>
-                  </ActionButton>
-                </div>
-              )}
-              {demo && (
-                <div className="no-padding-div">
-                  <ActionButton link={demo} className=" bg-black">
-                    <LinkIcon className="text-white" />
-                    <div className="text-sm font-mono text-white">Demo</div>
-                  </ActionButton>
-                </div>
-              )}
-              {report && (
-                <div className="no-padding-div">
-                  <ActionButton link={report} className=" bg-black">
-                    <DocumentIcon className="text-white" />
-                    <div className="text-sm font-mono text-white">Report</div>
-                  </ActionButton>
-                </div>
-              )}
-              {slides && (
-                <div className="no-padding-div">
-                  <ActionButton link={slides} className=" bg-black">
-                    <SlidesIcon />
-                    <div className="text-sm font-mono text-white">Slides</div>
-                  </ActionButton>
-                </div>
-              )}
-              {video && (
-                <div className="no-padding-div">
-                  <ActionButton link={video} className=" bg-black">
-                    <VideoIcon className="text-white" />
-                    <div className="text-sm font-mono text-white">Video</div>
-                  </ActionButton>
-                </div>
-              )}
-              {certificate && (
-                <div className="no-padding-div">
-                  <ActionButton link={certificate} className=" bg-black">
-                    <CertificateIcon className="text-white" />
-                    <div className="text-sm font-mono text-white">Paper</div>
-                  </ActionButton>
-                </div>
-              )}
-            </div>
+          <div className="font-bold text-xl pr-2 mb-1">{name}</div>
+          <div className="flex flex-row flex-wrap gap-x-2 gap-y-2 mb-2">
+            {github && (
+              <div className="no-padding-div">
+                <ActionButton link={github} className=" bg-black">
+                  <GitHubIcon className="" fill="white" />
+                  <div className="text-sm font-mono text-white">GitHub</div>
+                </ActionButton>
+              </div>
+            )}
+            {demo && (
+              <div className="no-padding-div">
+                <ActionButton link={demo} className=" bg-black">
+                  <LinkIcon className="text-white" />
+                  <div className="text-sm font-mono text-white">Demo</div>
+                </ActionButton>
+              </div>
+            )}
+            {report && (
+              <div className="no-padding-div">
+                <ActionButton link={report} className=" bg-black">
+                  <DocumentIcon className="text-white" />
+                  <div className="text-sm font-mono text-white">Report</div>
+                </ActionButton>
+              </div>
+            )}
+            {slides && (
+              <div className="no-padding-div">
+                <ActionButton link={slides} className=" bg-black">
+                  <SlidesIcon />
+                  <div className="text-sm font-mono text-white">Slides</div>
+                </ActionButton>
+              </div>
+            )}
+            {video && (
+              <div className="no-padding-div">
+                <ActionButton link={video} className=" bg-black">
+                  <VideoIcon className="text-white" />
+                  <div className="text-sm font-mono text-white">Video</div>
+                </ActionButton>
+              </div>
+            )}
+            {certificate && (
+              <div className="no-padding-div">
+                <ActionButton link={certificate} className=" bg-black">
+                  <CertificateIcon className="text-white" />
+                  <div className="text-sm font-mono text-white">Paper</div>
+                </ActionButton>
+              </div>
+            )}
           </div>
           <p
             className={`text-gray-700 text-base ${
