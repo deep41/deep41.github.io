@@ -107,6 +107,40 @@ const projectList: ProjectItemProps[] = [
     report:
       "https://docs.google.com/document/d/1kdRHPhqhmMHkWR1kMF2KVQUF2UvxLtIb8g0CKDeGMpU/edit?usp=sharing",
   },
+  {
+    name: "Stance Detection for Fake News Identification",
+    description: "",
+    images: [],
+    github: "",
+    slides:
+      "https://drive.google.com/file/d/1iu_A6b5PxzayXXiSFN1HG-Lh9joISeuk/view?usp=sharing",
+    report:
+      "https://drive.google.com/file/d/1zqfp0YS5ZoomrGX2SK-HPHzz34dwL-Jt/view?usp=sharing",
+  },
+  {
+    name: "REAUG",
+    description: "",
+    images: [],
+    github: "",
+  },
+  {
+    name: "Networked.io",
+    description: "",
+    images: [],
+    github: "",
+  },
+  {
+    name: "ASE project",
+    description: "",
+    images: [],
+    github: "",
+  },
+  {
+    name: "NNDL Competition project",
+    description: "",
+    images: [],
+    github: "",
+  },
 ];
 
 const Project = (props: ProjectType) => {
@@ -118,17 +152,7 @@ const Project = (props: ProjectType) => {
         <div className="font-bold text-2xl">Projects</div>
         <div className="pt-4 grid md:grid-cols-2 grid-cols-1 gap-4">
           {projectList.map((item) => (
-            <ProjectItem
-              name={item.name}
-              description={item.description}
-              images={item.images}
-              github={item.github}
-              demo={item.demo}
-              report={item.report}
-              slides={item.slides}
-              video={item.video}
-              certificate={item.certificate}
-            />
+            <ProjectItem {...item} />
           ))}
         </div>
       </div>
