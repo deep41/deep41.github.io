@@ -44,19 +44,19 @@ const About = (props: AboutType) => {
             <div className="mt-2 flex flex-row gap-2">
               {githubLink && (
                 <ActionButton link={githubLink} key={"github-header"}>
-                  <GitHubIcon fill="white" />
+                  <GitHubIcon className="text-black dark:text-white" />
                   GitHub
                 </ActionButton>
               )}
               {linkedinLink && (
                 <ActionButton link={linkedinLink} key={"linkedin-header"}>
-                  <LinkedInIcon className="dark:text-white" fill="white" />
+                  <LinkedInIcon className="text-black dark:text-white" />
                   LinkedIn
                 </ActionButton>
               )}
               {resumeLink && (
                 <ActionButton link={resumeLink} key={"resume-header"}>
-                  <DocumentIcon className="dark:text-white" />
+                  <DocumentIcon className="text-black dark:text-white" />
                   Resume
                 </ActionButton>
               )}
