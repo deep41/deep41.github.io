@@ -61,7 +61,7 @@ function App() {
             ]
           }
         />
-        <div className="container mx-auto shadow-xl bg-white rounded-lg max-w-[1000px]">
+        <div className="container mx-auto max-w-[1000px] rounded-lg bg-white shadow-xl">
           <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
             <div className="md:col-span-2 lg:col-span-3">
               <About

@@ -10,9 +10,9 @@ const Header = (props: HeaderType) => {
   return (
     <>
       <header className="bg-gray-100">
-        <div className="px-4 mx-auto">
+        <div className="mx-auto px-4">
           <nav className="flex items-center justify-between">
-            <a href="#" className="text-lg font-bold py-4">
+            <a href="#" className="py-4 text-lg font-bold">
               {headerName}
             </a>
             <ul className="flex space-x-1">
@@ -20,7 +20,7 @@ const Header = (props: HeaderType) => {
                 navLinks.map((item) => (
                   <li>
                     <a
-                      className="py-2 px-4 text-gray-600 flex flex-row items-center rounded-md outline hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 transition duration-100 ease-in-out outline-gray-400 hover:outline-gray-700 focus:outline-gray-700"
+                      className="flex flex-row items-center rounded-md px-4 py-2 text-gray-600 outline outline-gray-400 transition duration-100 ease-in-out hover:bg-gray-200 hover:text-gray-900 hover:outline-gray-700 focus:bg-gray-200 focus:text-gray-900 focus:outline-gray-700"
                       href={item.link}
                       target="_blank"
                     >

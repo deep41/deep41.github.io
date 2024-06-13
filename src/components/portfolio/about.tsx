@@ -26,15 +26,15 @@ const About = (props: AboutType) => {
   return (
     <>
       <div className="px-6 py-2">
-        <div className="md:flex md:flex-direction-row flex-direction-column items-center">
-          <Avatar className="h-40 w-40 md:h-60 md:w-60 m-4 md:mb-0 md:text-center mx-auto">
+        <div className="md:flex-direction-row flex-direction-column items-center md:flex">
+          <Avatar className="m-4 mx-auto h-40 w-40 md:mb-0 md:h-60 md:w-60 md:text-center">
             <AvatarImage src="https://avatars.githubusercontent.com/u/22258487?v=4" />
             <AvatarFallback>DR</AvatarFallback>
           </Avatar>
-          <div className="md:ml-12 ml-0">
+          <div className="ml-0 md:ml-12">
             <p className="text-lg font-bold">{aboutData.title}</p>
             {aboutData.points.map((point) => (
-              <p className="text-gray-600 mt-2 ">{point}</p>
+              <p className="mt-2 text-gray-600">{point}</p>
             ))}
             <div className="mt-2 flex flex-row gap-2">
               {githubLink && (

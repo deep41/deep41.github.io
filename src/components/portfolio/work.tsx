@@ -35,27 +35,27 @@ const Work = (props: WorkType) => {
   return (
     <>
       <div className="px-6 md:py-2">
-        <div className="font-bold text-2xl">Work Experience</div>
+        <div className="text-2xl font-bold">Work Experience</div>
         {workList.map((item) => (
-          <div className="md:px-6 py-2">
-            <div className="md:flex md:flex-direction-row flex-direction-column items-start ">
+          <div className="py-2 md:px-6">
+            <div className="md:flex-direction-row flex-direction-column items-start md:flex">
               <img
                 src={item.image}
                 alt={item.imagealt}
-                className="h-32 w-32 p-2 m-2 mx-auto md:mx-0"
+                className="m-2 mx-auto h-32 w-32 p-2 md:mx-0"
               />
-              <div className="md:ml-12 ml-0 w-full">
-                <div className="flex flex-col items-baseline md:flex-row  md:justify-between">
+              <div className="ml-0 w-full md:ml-12">
+                <div className="flex flex-col items-baseline md:flex-row md:justify-between">
                   <div className="pr-2 text-lg font-bold">{item.name}</div>
-                  <div className="text-md italic text-balance">
+                  <div className="text-md text-balance italic">
                     {item.from} - {item.to}
                   </div>
                 </div>
                 <div className="text-sm italic">{item.title}</div>
                 {item.points &&
                   item.points.map((point) => (
-                    <p className="text-gray-600 items-baseline">
-                      <span className="text-gray-700 text-sm">■</span>
+                    <p className="items-baseline text-gray-600">
+                      <span className="text-sm text-gray-700">■</span>
                       &nbsp;&nbsp;
                       {point}
                     </p>

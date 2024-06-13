@@ -148,9 +148,9 @@ const Project = (props: ProjectType) => {
 
   return (
     <>
-      <div className="px-6 py-2 bg-gray-100/10">
-        <div className="font-bold text-2xl">Projects</div>
-        <div className="pt-4 grid md:grid-cols-2 grid-cols-1 gap-4">
+      <div className="bg-gray-100/10 px-6 py-2">
+        <div className="text-2xl font-bold">Projects</div>
+        <div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
           {projectList.map((item) => (
             <ProjectItem {...item} />
           ))}
