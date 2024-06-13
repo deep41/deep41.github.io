@@ -2,7 +2,7 @@
 import Header from "@/components/portfolio/header";
 import About from "@/components/portfolio/about";
 import Project from "@/components/portfolio/project";
-import Work from "@/components/portfolio/work";
+// import Work from "@/components/portfolio/work";
 // import Contact from "@/components/portfolio/contact";
 import Education from "@/components/portfolio/education";
 import Certifications from "@/components/portfolio/certifications";
@@ -73,7 +73,7 @@ function App() {
               <Project />
               <Certifications />
               <Education />
-              <Work />
+              {/* <Work /> */}
               {/* <Contact /> */}
               <div className="h-10" />
             </div>

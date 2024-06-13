@@ -117,30 +117,30 @@ const projectList: ProjectItemProps[] = [
     report:
       "https://drive.google.com/file/d/1zqfp0YS5ZoomrGX2SK-HPHzz34dwL-Jt/view?usp=sharing",
   },
-  {
-    name: "REAUG",
-    description: "",
-    images: [],
-    github: "",
-  },
-  {
-    name: "Networked.io",
-    description: "",
-    images: [],
-    github: "",
-  },
-  {
-    name: "ASE project",
-    description: "",
-    images: [],
-    github: "",
-  },
-  {
-    name: "NNDL Competition project",
-    description: "",
-    images: [],
-    github: "",
-  },
+  // {
+  //   name: "REAUG",
+  //   description: "",
+  //   images: [],
+  //   github: "",
+  // },
+  // {
+  //   name: "Networked.io",
+  //   description: "",
+  //   images: [],
+  //   github: "",
+  // },
+  // {
+  //   name: "ASE project",
+  //   description: "",
+  //   images: [],
+  //   github: "",
+  // },
+  // {
+  //   name: "NNDL Competition project",
+  //   description: "",
+  //   images: [],
+  //   github: "",
+  // },
 ];
 
 const Project = (props: ProjectType) => {
