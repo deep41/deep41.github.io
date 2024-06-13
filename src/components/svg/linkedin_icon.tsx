@@ -1,12 +1,11 @@
 import { cn } from "@/lib/utils";
 
-const LinkedInIcon = (props: { className?: string }) => {
-  const { className } = props;
+const LinkedInIcon = (props: { className?: string; fill?: string }) => {
+  const { className, fill } = props;
   return (
     <svg
       stroke="white"
-      fill="black"
-      stroke-width="0"
+      fill={fill || "black"}
       viewBox="0 0 16 16"
       className={cn("mr-2", className)}
       height="1em"

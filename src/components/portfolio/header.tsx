@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { IoMdDownload } from "react-icons/io";
 
 type HeaderType = {
@@ -7,12 +8,32 @@ type HeaderType = {
 
 const Header = (props: HeaderType) => {
   const { headerName, navLinks } = props;
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      document.documentElement.classList.add(storedTheme);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    console.log("toggleTheme");
+    const htmlElement = document.documentElement;
+    if (htmlElement.classList.contains("dark")) {
+      htmlElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      htmlElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+  };
+
   return (
     <>
-      <header className="bg-gray-100">
+      <header className="bg-gray-100 dark:bg-black">
         <div className="mx-auto px-4">
           <nav className="flex items-center justify-between">
-            <a href="#" className="py-4 text-lg font-bold">
+            <a href="#" className="py-4 text-lg font-bold dark:text-white">
               {headerName}
             </a>
             <ul className="flex space-x-1">

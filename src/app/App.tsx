@@ -48,7 +48,7 @@ const skillsList = [
 function App() {
   return (
     <>
-      <div className="bg-gray-100 lg:pb-8">
+      <div className="bg-gray-100 dark:bg-black lg:pb-8">
         <Header
           headerName="Portfolio"
           navLinks={
@@ -61,7 +61,7 @@ function App() {
             ]
           }
         />
-        <div className="container mx-auto max-w-[1000px] rounded-lg bg-white shadow-xl">
+        <div className="container mx-auto max-w-[1000px] rounded-lg bg-white text-white shadow-xl dark:bg-black">
           <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
             <div className="md:col-span-2 lg:col-span-3">
               <About

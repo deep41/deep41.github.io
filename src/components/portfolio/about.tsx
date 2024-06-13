@@ -33,25 +33,30 @@ const About = (props: AboutType) => {
           </Avatar>
           <div className="ml-0 md:ml-12">
             <p className="text-lg font-bold">{aboutData.title}</p>
-            {aboutData.points.map((point) => (
-              <p className="mt-2 text-gray-600">{point}</p>
+            {aboutData.points.map((point, index) => (
+              <p
+                className="mt-2 text-gray-600 dark:text-gray-200"
+                key={`${index}-about`}
+              >
+                {point}
+              </p>
             ))}
             <div className="mt-2 flex flex-row gap-2">
               {githubLink && (
-                <ActionButton link={githubLink}>
-                  <GitHubIcon />
+                <ActionButton link={githubLink} key={"github-header"}>
+                  <GitHubIcon fill="white" />
                   GitHub
                 </ActionButton>
               )}
               {linkedinLink && (
-                <ActionButton link={linkedinLink}>
-                  <LinkedInIcon />
+                <ActionButton link={linkedinLink} key={"linkedin-header"}>
+                  <LinkedInIcon className="dark:text-white" fill="white" />
                   LinkedIn
                 </ActionButton>
               )}
               {resumeLink && (
-                <ActionButton link={resumeLink}>
-                  <DocumentIcon />
+                <ActionButton link={resumeLink} key={"resume-header"}>
+                  <DocumentIcon className="dark:text-white" />
                   Resume
                 </ActionButton>
               )}

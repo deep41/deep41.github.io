@@ -36,8 +36,8 @@ const Education = (props: EducationType) => {
     <>
       <div className="px-6 md:py-2">
         <div className="text-2xl font-bold">Education</div>
-        {educationList.map((item) => (
-          <div className="mt-2 py-2 md:px-6">
+        {educationList.map((item, index) => (
+          <div className="mt-2 py-2 md:px-6" key={`${index}-educ`}>
             {/* Hover transition
                 rounded-lg hover:bg-gray-100/70 hover:shadow-sm hover:drop-shadow-sm transition duration-100 ease-in-out
             */}
@@ -56,8 +56,13 @@ const Education = (props: EducationType) => {
                 </div>
                 <div className="text-sm italic">{item.degree}</div>
                 {item.points &&
-                  item.points.map((point) => (
-                    <p className="items-baseline text-gray-600">{point}</p>
+                  item.points.map((point, index) => (
+                    <p
+                      className="light:text-gray-600 items-baseline"
+                      key={`${index}-educ`}
+                    >
+                      {point}
+                    </p>
                   ))}
               </div>
             </div>

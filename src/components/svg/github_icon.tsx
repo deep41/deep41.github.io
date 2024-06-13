@@ -6,7 +6,6 @@ const GitHubIcon = (props: { className?: string; fill?: string }) => {
     <svg
       stroke="white"
       fill={fill || "black"}
-      stroke-width="0"
       viewBox="0 0 496 512"
       className={cn("mr-2", className)}
       height="1em"

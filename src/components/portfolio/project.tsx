@@ -107,16 +107,16 @@ const projectList: ProjectItemProps[] = [
     report:
       "https://docs.google.com/document/d/1kdRHPhqhmMHkWR1kMF2KVQUF2UvxLtIb8g0CKDeGMpU/edit?usp=sharing",
   },
-  {
-    name: "Stance Detection for Fake News Identification",
-    description: "",
-    images: [],
-    github: "",
-    slides:
-      "https://drive.google.com/file/d/1iu_A6b5PxzayXXiSFN1HG-Lh9joISeuk/view?usp=sharing",
-    report:
-      "https://drive.google.com/file/d/1zqfp0YS5ZoomrGX2SK-HPHzz34dwL-Jt/view?usp=sharing",
-  },
+  // {
+  //   name: "Stance Detection for Fake News Identification",
+  //   description: "",
+  //   images: [],
+  //   github: "",
+  //   slides:
+  //     "https://drive.google.com/file/d/1iu_A6b5PxzayXXiSFN1HG-Lh9joISeuk/view?usp=sharing",
+  //   report:
+  //     "https://drive.google.com/file/d/1zqfp0YS5ZoomrGX2SK-HPHzz34dwL-Jt/view?usp=sharing",
+  // },
   // {
   //   name: "REAUG",
   //   description: "",
@@ -148,11 +148,11 @@ const Project = (props: ProjectType) => {
 
   return (
     <>
-      <div className="bg-gray-100/10 px-6 py-2">
+      <div className="light:bg-gray-100/10 px-6 py-2">
         <div className="text-2xl font-bold">Projects</div>
         <div className="grid grid-cols-1 gap-4 pt-4 md:grid-cols-2">
-          {projectList.map((item) => (
-            <ProjectItem {...item} />
+          {projectList.map((item, index) => (
+            <ProjectItem {...item} key={index} />
           ))}
         </div>
       </div>
