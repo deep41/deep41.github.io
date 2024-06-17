@@ -47,7 +47,10 @@ const Header = (props: HeaderType) => {
       <header className="bg-gray-100 transition dark:bg-zinc-900">
         <div className="mx-auto px-4">
           <nav className="flex items-center justify-between">
-            <a href="#" className="py-4 text-lg font-bold dark:text-white">
+            <a
+              href="#"
+              className="py-4 text-lg font-bold transition dark:text-white"
+            >
               {headerName}
             </a>
             <ul className="flex space-x-1">

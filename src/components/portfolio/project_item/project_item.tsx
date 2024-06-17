@@ -4,17 +4,17 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from "../../ui/carousel";
-import { Card, CardContent } from "../../ui/card";
-import ActionButton from "../../ui/actionbutton";
-import GitHubIcon from "../../svg/github_icon";
-import "./project_item.css";
-import DocumentIcon from "@/components/svg/document_icon";
-import SlidesIcon from "@/components/svg/slides_icon";
-import LinkIcon from "@/components/svg/link_icon";
-import VideoIcon from "@/components/svg/video_icon";
-import CertificateIcon from "@/components/svg/certificate_icon";
-import { cn } from "@/lib/utils";
+} from '../../ui/carousel';
+import { Card, CardContent } from '../../ui/card';
+import ActionButton from '../../ui/actionbutton';
+import GitHubIcon from '../../svg/github_icon';
+import './project_item.css';
+import DocumentIcon from '@/components/svg/document_icon';
+import SlidesIcon from '@/components/svg/slides_icon';
+import LinkIcon from '@/components/svg/link_icon';
+import VideoIcon from '@/components/svg/video_icon';
+import CertificateIcon from '@/components/svg/certificate_icon';
+import { cn } from '@/lib/utils';
 
 export type ProjectItemProps = {
   name: string;
@@ -44,8 +44,8 @@ const ProjectItem = (props: ProjectItemProps) => {
     <>
       <div
         className={cn(
-          "overflow-hidden rounded-md bg-white outline outline-[0.2px] outline-gray-200 transition hover:shadow-md",
-          "dark:bg-black dark:outline dark:outline-[0.2px] dark:outline-zinc-100",
+          'overflow-hidden rounded-md bg-white outline outline-[0.2px] outline-gray-200 transition hover:shadow-md',
+          'dark:bg-black dark:outline dark:outline-[0.2px] dark:outline-zinc-100',
         )}
       >
         <Carousel className="m-0 w-full p-0">
@@ -117,7 +117,7 @@ const ProjectItem = (props: ProjectItemProps) => {
           </div>
           <p
             className={`text-base text-gray-700 dark:text-gray-200 ${
-              images.length > 0 ? "line-clamp-5" : ""
+              images.length > 0 ? 'line-clamp-5' : ''
             }`}
           >
             {description}

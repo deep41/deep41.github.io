@@ -2,30 +2,30 @@ type EducationType = {};
 
 const educationList = [
   {
-    name: "North Carolina State Univeristy",
-    degree: "Masters in Computer Science",
-    from: "Aug 2023",
-    to: "May 2025",
+    name: 'North Carolina State Univeristy',
+    degree: 'Masters in Computer Science',
+    from: 'Aug 2023',
+    to: 'May 2025',
     points: [
-      "GPA: 3.84",
-      "Hack NC 2024 Winner",
-      "Tech Crew member at University Theatre",
+      'GPA: 3.84',
+      'Hack NC 2024 Winner',
+      'Tech Crew member at University Theatre',
     ],
-    image: "/ncsu_logo.png",
-    imagealt: "NCSU logo",
+    image: '/ncsu_logo.png',
+    imagealt: 'NCSU logo',
   },
   {
-    name: "Ramaiah Institute of Technology",
-    degree: "Bachelors of Engineering in Computer Science and Engineering",
-    from: "July 2015",
-    to: "June 2019",
+    name: 'Ramaiah Institute of Technology',
+    degree: 'Bachelors of Engineering in Computer Science and Engineering',
+    from: 'July 2015',
+    to: 'June 2019',
     points: [
-      "CGPA: 8.66",
-      "Hackathons won: init 2017, EMPYREAL 2017",
-      "Department Fest Organiser",
+      'CGPA: 8.66',
+      'Hackathons won: init 2017, EMPYREAL 2017',
+      'Department Fest Organiser',
     ],
-    image: "/rit_logo.png",
-    imagealt: "RIT logo",
+    image: '/rit_logo.png',
+    imagealt: 'RIT logo',
   },
 ];
 
