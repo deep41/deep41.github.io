@@ -724,6 +724,14 @@ body {
   margin-top: 0.5rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .line-clamp-5 {
   overflow: hidden;
   display: -webkit-box;
