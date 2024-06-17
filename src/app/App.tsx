@@ -8,43 +8,6 @@ import Education from '@/components/portfolio/education';
 import Certifications from '@/components/portfolio/certifications';
 import Skills from '@/components/portfolio/skills';
 
-const skillsList = [
-  'Javascript',
-  'HTML',
-  'CSS',
-  'Typescript',
-  'React',
-  'Angular',
-  'NodeJs',
-  'Jest',
-  'ExpressJs',
-  'GraphQL',
-  'Websockets',
-  'gRPC',
-  'Python',
-  'Django',
-  'GoLang',
-  'Java',
-  'Springboot',
-  'MySQL',
-  'PostgreSQL',
-  'MongoDB',
-  'NoSQL',
-  'Amazon RDS',
-  'Git',
-  'Redis',
-  'RabbitMQ',
-  'Ansible',
-  'Docker',
-  'Kubernetes',
-  'Nginx',
-  'Helm',
-  'SQS',
-  'EKS',
-  'Github Actions',
-  // "",
-];
-
 function App() {
   return (
     <>
@@ -69,7 +32,7 @@ function App() {
                 linkedinLink="https://linkedin.com/in/deepr41"
                 resumeLink="https://bit.ly/3V2HZDR"
               />
-              <Skills skills={skillsList} />
+              <Skills />
               <Project />
               <Certifications />
               <Education />

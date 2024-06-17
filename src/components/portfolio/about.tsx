@@ -23,20 +23,28 @@ const About = (props: AboutType) => {
           </Avatar>
           <div className="ml-0 md:ml-12">
             <p className="mt-4">
-              I'm <span className="font-bold">Deepak Rajendran</span>, a
-              software developer with a passion for creating innovative,
+              I'm{' '}
+              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg font-bold text-transparent">
+                Deepak Rajendran
+              </span>
+              , a software developer with a passion for creating innovative,
               high-performance, and scalable applications.
             </p>
             <p className="mt-2">
               I love good design and am committed to solving complex problems. I
-              see the big picture and approach problems methodically, breaking
-              them down into manageable pieces to ensure successful project
-              completion.
+              see the{' '}
+              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg font-semibold text-transparent">
+                big picture
+              </span>{' '}
+              and approach problems methodically, breaking them down into
+              manageable pieces to ensure successful project completion.
             </p>
             <p className="mt-2">
-              Currently, I am working with my teammates at NCSU to create a
-              <span className="font-semibold"> chatbot</span> with
-              Retrieval-Augmented Generation (RAG) to assist students and
+              Currently, I am working with my teammates at NCSU to create a{' '}
+              <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg font-semibold text-transparent">
+                chatbot
+              </span>{' '}
+              with Retrieval-Augmented Generation (RAG) to assist students and
               professors.
             </p>
             <p className="mt-2">
@@ -44,7 +52,7 @@ const About = (props: AboutType) => {
               enjoying a movie, hiking the great outdoors, or gaming with
               friends.
             </p>
-            <div className="mt-2 flex flex-row gap-2">
+            <div className="mt-3 flex flex-row gap-2">
               {githubLink && (
                 <ActionButton link={githubLink} key={'github-header'}>
                   <GitHubIcon className="text-black dark:text-white" />
