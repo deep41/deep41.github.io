@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
 import { FaMoon } from 'react-icons/fa';
-import { IoMdDownload } from 'react-icons/io';
 import { IoSunny } from 'react-icons/io5';
+import { Link } from 'react-router';
 
-type HeaderType = {
-  headerName: string;
-  navLinks?: { name: string; link: string }[];
-};
-
-const Header = (props: HeaderType) => {
-  const { headerName, navLinks } = props;
-
+const Header = () => {
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -43,41 +36,43 @@ const Header = (props: HeaderType) => {
   };
 
   return (
-    <>
-      <header className="bg-gray-100 transition dark:bg-zinc-900">
-        <div className="mx-auto px-4">
-          <nav className="flex items-center justify-between">
-            <a
-              href="#"
-              className="py-4 text-lg font-bold transition dark:text-white"
-            >
-              {headerName}
-            </a>
-            <ul className="flex space-x-1">
-              {navLinks &&
-                navLinks.map((item) => (
-                  <li>
-                    <a
-                      className="flex flex-row items-center rounded-md px-4 py-2 text-gray-600 outline outline-gray-400 transition duration-100 ease-in-out hover:bg-gray-200 hover:text-gray-900 hover:outline-gray-700 focus:bg-gray-200 focus:text-gray-900 focus:outline-gray-700"
-                      href={item.link}
-                      target="_blank"
-                    >
-                      <span className="pr-2">
-                        <IoMdDownload className="h-4 w-4" />
-                      </span>
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              <button className="dark:text-white" onClick={toggleTheme}>
-                <IoSunny className="block h-4 w-4 dark:hidden" />
-                <FaMoon className="hidden h-4 w-4 dark:block" />
-              </button>
-            </ul>
-          </nav>
+    <header className="sticky top-0 z-50 bg-stone-100 px-4 py-4 transition dark:bg-stone-900">
+      <nav className="mx-auto flex max-w-[1000px] items-center justify-between">
+        <div className="flex flex-1 items-center space-x-12 font-['JetBrains_Mono']">
+          <Link
+            to="/"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+          >
+            /home
+          </Link>
+          <Link
+            to="/about"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+          >
+            /about
+          </Link>
+          <Link
+            to="/projects"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+          >
+            /projects
+          </Link>
+          <Link
+            to="/contact"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+          >
+            /contact
+          </Link>
         </div>
-      </header>
-    </>
+        <button
+          className="rounded-md p-2 font-['JetBrains_Mono'] text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800"
+          onClick={toggleTheme}
+        >
+          <IoSunny className="block h-5 w-5 dark:hidden" />
+          <FaMoon className="hidden h-5 w-5 dark:block" />
+        </button>
+      </nav>
+    </header>
   );
 };
 

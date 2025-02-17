@@ -1,8 +1,4 @@
-type CertificationsType = {};
-
-const Certifications = (props: CertificationsType) => {
-  const {} = props;
-
+const Certifications = () => {
   return <></>;
 };
 

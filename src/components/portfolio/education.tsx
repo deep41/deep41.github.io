@@ -1,4 +1,4 @@
-type EducationType = {};
+// type EducationType = {};
 
 const educationList = [
   {
@@ -29,8 +29,8 @@ const educationList = [
   },
 ];
 
-const Education = (props: EducationType) => {
-  const {} = props;
+const Education = () => {
+  // const {} = props;
 
   return (
     <>
