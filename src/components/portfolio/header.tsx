@@ -39,33 +39,33 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-stone-100 px-4 py-4 transition dark:bg-stone-900">
       <nav className="mx-auto flex max-w-[1000px] items-center justify-between">
         <div className="flex flex-1 items-center space-x-12 font-['JetBrains_Mono']">
-          <Link 
-            to="/" 
-            className="text-sm font-medium text-gray-700 transition hover:text-gray-900 hover:scale-110 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400"
+          <Link
+            to="/"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
           >
             /home
           </Link>
-          <Link 
-            to="/portfolio" 
-            className="text-sm font-medium text-gray-700 transition hover:text-gray-900 hover:scale-110 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400"
+          <Link
+            to="/about"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
           >
-            /portfolio
+            /about
           </Link>
-          <Link 
-            to="/projects" 
-            className="text-sm font-medium text-gray-700 transition hover:text-gray-900 hover:scale-110 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400"
+          <Link
+            to="/projects"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
           >
             /projects
           </Link>
-          <Link 
-            to="/contact" 
-            className="text-sm font-medium text-gray-700 transition hover:text-gray-900 hover:scale-110 hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400"
+          <Link
+            to="/contact"
+            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
           >
             /contact
           </Link>
         </div>
         <button
-          className="rounded-md p-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800 font-['JetBrains_Mono']"
+          className="rounded-md p-2 font-['JetBrains_Mono'] text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800"
           onClick={toggleTheme}
         >
           <IoSunny className="block h-5 w-5 dark:hidden" />
