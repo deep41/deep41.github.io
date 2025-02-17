@@ -24,7 +24,7 @@ const BlogDetail = () => {
     <div className="container mx-auto px-4 py-8 min-h-screen">
       <div className="max-w-3xl mx-auto">
         <Button variant="ghost" className="mb-8" asChild>
-          <Link to="/blog">
+          <Link to="/">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to blogs
           </Link>

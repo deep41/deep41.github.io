@@ -10,6 +10,9 @@ import Certifications from '@/components/portfolio/certifications';
 import Skills from '@/components/portfolio/skills';
 import BlogList from '@/components/blog/BlogList';
 import BlogDetail from '@/components/blog/BlogDetail';
+import ContactPage from '@/components/contact/ContactPage';
+import ProjectsPage from '@/components/projects/ProjectsPage';
+import Intro from '@/components/home/Intro';
 
 function App() {
   return (
@@ -19,6 +22,23 @@ function App() {
         <Routes>
           <Route
             path="/"
+            element={
+              <div className="w-full bg-white transition dark:bg-black dark:text-white">
+                <Intro />
+                <BlogList />
+              </div>
+            }
+          />
+          <Route
+            path="/blog/:id"
+            element={
+              <div className="w-full bg-white transition dark:bg-black dark:text-white">
+                <BlogDetail />
+              </div>
+            }
+          />
+          <Route
+            path="/portfolio"
             element={
               <div className="mx-auto max-w-[1000px] rounded-lg bg-white shadow-xl transition dark:bg-black dark:text-white">
                 <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
@@ -41,18 +61,18 @@ function App() {
             }
           />
           <Route
-            path="/blog"
+            path="/projects"
             element={
               <div className="w-full bg-white transition dark:bg-black dark:text-white">
-                <BlogList />
+                <ProjectsPage />
               </div>
             }
           />
           <Route
-            path="/blog/:id"
+            path="/contact"
             element={
               <div className="w-full bg-white transition dark:bg-black dark:text-white">
-                <BlogDetail />
+                <ContactPage />
               </div>
             }
           />

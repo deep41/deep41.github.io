@@ -5,8 +5,8 @@ import { Separator } from "@/components/ui/separator";
 
 const BlogList = () => {
   return (
-    <div className="container mx-auto px-4 py-8 min-h-screen">
-      <div className="max-w-4xl mx-auto">
+    <div className="max-w-[1000px] container mx-auto py-4 px-4 min-h-screen">
+      <div className=" mx-auto">
         <div className="space-y-2 mb-8">
           <h1 className="text-4xl font-bold tracking-tight">Blog Posts</h1>
           <p className="text-muted-foreground">
