@@ -18,7 +18,7 @@ const BlogList = () => {
         <div className="grid gap-6">
           {blogs.map((blog) => (
             <Link key={blog.id} to={`/blog/${blog.id}`}>
-              <Card className="hover:bg-accent transition-colors">
+              <Card className="bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors">
                 <CardHeader>
                   <CardTitle>{blog.title}</CardTitle>
                   <CardDescription>{blog.description}</CardDescription>

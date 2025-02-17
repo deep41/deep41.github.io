@@ -23,7 +23,7 @@ function App() {
           <Route
             path="/"
             element={
-              <div className="w-full bg-white transition dark:bg-black dark:text-white">
+              <div className="w-full bg-stone-100 transition dark:bg-stone-900 dark:text-white">
                 <Intro />
                 <BlogList />
               </div>
@@ -32,7 +32,7 @@ function App() {
           <Route
             path="/blog/:id"
             element={
-              <div className="w-full bg-white transition dark:bg-black dark:text-white">
+              <div className="w-full bg-stone-100 transition dark:bg-stone-900 dark:text-white">
                 <BlogDetail />
               </div>
             }
@@ -63,7 +63,7 @@ function App() {
           <Route
             path="/projects"
             element={
-              <div className="w-full bg-white transition dark:bg-black dark:text-white">
+              <div className="w-full bg-stone-100 transition dark:bg-stone-900 dark:text-white">
                 <ProjectsPage />
               </div>
             }
@@ -71,7 +71,7 @@ function App() {
           <Route
             path="/contact"
             element={
-              <div className="w-full bg-white transition dark:bg-black dark:text-white">
+              <div className="w-full bg-stone-100 transition dark:bg-stone-900 dark:text-white">
                 <ContactPage />
               </div>
             }

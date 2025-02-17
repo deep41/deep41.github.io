@@ -14,19 +14,19 @@ export default function Intro() {
           I write about software development, tech, and my experiences.
         </p>
         <div className="flex gap-4">
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="bg-stone-300 dark:bg-stone-700">
             <a href="https://github.com/deep41" target="_blank" rel="noopener noreferrer">
               <Github className="mr-2 h-4 w-4" />
               GitHub
             </a>
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="bg-stone-300 dark:bg-stone-700">
             <a href="https://linkedin.com/in/deep41" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-4 w-4" />
               LinkedIn
             </a>
           </Button>
-          <Button asChild>
+          <Button asChild className="bg-stone-700 dark:bg-stone-300">
             <Link to="/portfolio">
               View Portfolio
               <ArrowRight className="ml-2 h-4 w-4" />
