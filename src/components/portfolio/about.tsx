@@ -12,9 +12,10 @@
 
 const About = () => {
   return (
-    <div className="mx-auto max-w-[1000px] px-4 py-16">
+    <div className="mx-auto max-w-[1000px] px-4 py-16 h-screen">
       <div className="space-y-2">
-        <p>
+        <div className="text-4xl">🚧 Work in progess, coming soon 🚧</div>
+        {/* <p>
           I'm{' '}
           <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-lg font-bold text-transparent">
             Deepak Rajendran
@@ -42,7 +43,7 @@ const About = () => {
         <p>
           When I'm not coding, you'll find me immersed in a good book, enjoying
           a movie, hiking the great outdoors, or gaming with friends.
-        </p>
+        </p> */}
       </div>
     </div>
   );

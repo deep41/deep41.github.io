@@ -52,8 +52,8 @@ const Intro = () => {
               </a>
             </Button>
             <Button asChild className="bg-stone-700 dark:bg-stone-300">
-              <Link to="/portfolio">
-                View Portfolio
+              <Link to="/about">
+                About Me
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

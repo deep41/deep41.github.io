@@ -52,7 +52,7 @@ const ProjectsPage = () => {
 
         <div className="grid gap-6">
           {projects.map((project, index) => (
-            <Card key={index}>
+            <Card key={index} className=' dark:bg-stone-800'>
               <CardContent className="p-6">
                 <div className="grid gap-6 md:grid-cols-2">
                   <img
@@ -67,7 +67,7 @@ const ProjectsPage = () => {
                     </p>
                     <div className="mb-4 flex flex-wrap gap-2">
                       {project.tags.map((tag, i) => (
-                        <Badge key={i} variant="secondary">
+                        <Badge key={i} variant="secondary" className='dark:bg-stone-700'>
                           {tag}
                         </Badge>
                       ))}
@@ -86,7 +86,7 @@ const ProjectsPage = () => {
                         </Button>
                       )}
                       {project.live && (
-                        <Button size="sm" asChild>
+                        <Button size="sm" asChild className='bg-stone-800 dark:bg-stone-200' >
                           <a
                             href={project.live}
                             target="_blank"
