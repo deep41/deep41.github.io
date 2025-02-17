@@ -1,16 +1,9 @@
 import { useEffect, useState } from 'react';
 import { FaMoon } from 'react-icons/fa';
-import { IoMdDownload } from 'react-icons/io';
 import { IoSunny } from 'react-icons/io5';
+import { Link } from 'react-router';
 
-type HeaderType = {
-  headerName: string;
-  navLinks?: { name: string; link: string }[];
-};
-
-const Header = (props: HeaderType) => {
-  const { headerName, navLinks } = props;
-
+const Header = () => {
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -43,41 +36,54 @@ const Header = (props: HeaderType) => {
   };
 
   return (
-    <>
-      <header className="bg-gray-100 transition dark:bg-zinc-900">
-        <div className="mx-auto px-4">
-          <nav className="flex items-center justify-between">
+    <header className="sticky top-0 z-50 bg-white px-4 py-4 shadow-sm transition dark:bg-black">
+      <nav className="mx-auto flex max-w-[1000px] items-center justify-between">
+        <Link to="/" className="text-xl font-bold">
+          Your Name
+        </Link>
+        <div className="flex items-center space-x-4">
+          <Link to="/" className="hover:text-gray-600 dark:hover:text-gray-300">
+            Home
+          </Link>
+          <Link to="/blog" className="hover:text-gray-600 dark:hover:text-gray-300">
+            Blog
+          </Link>
+          <li>
             <a
-              href="#"
-              className="py-4 text-lg font-bold transition dark:text-white"
+              href="/about"
+              className="text-sm font-medium text-gray-700 transition hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
             >
-              {headerName}
+              About
             </a>
-            <ul className="flex space-x-1">
-              {navLinks &&
-                navLinks.map((item) => (
-                  <li>
-                    <a
-                      className="flex flex-row items-center rounded-md px-4 py-2 text-gray-600 outline outline-gray-400 transition duration-100 ease-in-out hover:bg-gray-200 hover:text-gray-900 hover:outline-gray-700 focus:bg-gray-200 focus:text-gray-900 focus:outline-gray-700"
-                      href={item.link}
-                      target="_blank"
-                    >
-                      <span className="pr-2">
-                        <IoMdDownload className="h-4 w-4" />
-                      </span>
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              <button className="dark:text-white" onClick={toggleTheme}>
-                <IoSunny className="block h-4 w-4 dark:hidden" />
-                <FaMoon className="hidden h-4 w-4 dark:block" />
-              </button>
-            </ul>
-          </nav>
+          </li>
+          <li>
+            <a
+              href="/portfolio"
+              className="text-sm font-medium text-gray-700 transition hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+            >
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a
+              href="/contact"
+              className="text-sm font-medium text-gray-700 transition hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
+            >
+              Contact
+            </a>
+          </li>
         </div>
-      </header>
-    </>
+        <div>
+          <button
+            className="rounded-md p-2 text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800"
+            onClick={toggleTheme}
+          >
+            <IoSunny className="block h-5 w-5 dark:hidden" />
+            <FaMoon className="hidden h-5 w-5 dark:block" />
+          </button>
+        </div>
+      </nav>
+    </header>
   );
 };
 
