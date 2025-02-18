@@ -7,6 +7,7 @@ import BlogDetail from '@/components/blog/BlogDetail';
 import ContactPage from '@/components/contact/ContactPage';
 import ProjectsPage from '@/components/projects/ProjectsPage';
 import Intro from '@/components/home/Intro';
+import ProjectDetail from '@/components/projects/ProjectDetail';
 
 function App() {
   return (
@@ -63,6 +64,8 @@ function App() {
                 </div>
               }
             />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
           </Routes>
         </div>
       </Router>
