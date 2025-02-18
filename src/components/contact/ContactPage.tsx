@@ -8,8 +8,52 @@ import {
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from "@/hooks/use-toast"
+import { useState } from "react"
 
 const ContactPage = () => {
+  const { toast } = useToast()
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setLoading(true)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
+
+    try {
+      const response = await fetch('https://formspree.io/f/xdkapeoy', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      })
+
+      if (response.ok) {
+        toast({
+          title: "Success!",
+          description: "Your message has been sent successfully.",
+          variant: "default",
+        })
+        form.reset()
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      })
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="container mx-auto min-h-screen px-4 py-8">
       <div className="mx-auto max-w-2xl">
@@ -31,8 +75,7 @@ const ContactPage = () => {
           <CardContent>
             <form
               className="space-y-4"
-              action="https://formspree.io/f/xdkapeoy"
-              method="POST"
+              onSubmit={handleSubmit}
             >
               <div>
                 <label
@@ -46,7 +89,7 @@ const ContactPage = () => {
                   name="name"
                   type="text"
                   placeholder="Your name"
-                  className="dark:border-zinc-700 dark:bg-zinc-900"
+                  className="dark:border-stone-700 dark:bg-stone-900 "
                 />
               </div>
               <div>
@@ -61,7 +104,7 @@ const ContactPage = () => {
                   name="email"
                   type="email"
                   placeholder="your@email.com"
-                  className="dark:border-zinc-700 dark:bg-zinc-900"
+                  className="dark:border-stone-700 dark:bg-stone-900"
                   required
                 />
               </div>
@@ -77,12 +120,12 @@ const ContactPage = () => {
                   name="message"
                   placeholder="Your message"
                   rows={5}
-                  className="dark:border-zinc-700 dark:bg-zinc-900"
+                  className="dark:border-stone-700 dark:bg-stone-900"
                   required
                 />
               </div>
-              <Button type="submit" className="w-full">
-                Send Message
+              <Button type="submit" className="w-full dark:bg-stone-400" disabled={loading}>
+                {loading ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </CardContent>
