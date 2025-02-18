@@ -20,7 +20,7 @@ const ContactPage = () => {
           </p>
         </div>
 
-        <Card className="bg-white shadow-xl transition dark:bg-black dark:text-white">
+        <Card className="bg-white shadow-xl transition dark:bg-stone-800 dark:text-stone-300">
           <CardHeader>
             <CardTitle>Contact Form</CardTitle>
             <CardDescription className="dark:text-gray-400">

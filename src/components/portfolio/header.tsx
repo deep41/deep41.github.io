@@ -34,6 +34,7 @@ const Header = () => {
       setDarkMode('dark');
     }
   };
+  const hoverGradient = `hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent hover:from-blue-500 hover:to-purple-500`;
 
   return (
     <header className="sticky top-0 z-50 bg-stone-100 px-4 py-4 transition dark:bg-stone-900">
@@ -41,25 +42,25 @@ const Header = () => {
         <div className="flex flex-1 items-center space-x-12 font-['JetBrains_Mono']">
           <Link
             to="/"
-            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
             /home
           </Link>
           <Link
             to="/about"
-            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
             /about
           </Link>
           <Link
             to="/projects"
-            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
             /projects
           </Link>
           <Link
             to="/contact"
-            className="text-sm font-medium text-gray-700 transition hover:scale-110 hover:text-emerald-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-emerald-400"
+            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
             /contact
           </Link>
