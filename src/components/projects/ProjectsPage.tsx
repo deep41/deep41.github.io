@@ -40,7 +40,7 @@ const ProjectsPage = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="h-48 w-full rounded-lg object-cover"
+                      className="w-full rounded-lg object-contain"
                     />
                     <div>
                       <h2 className="mb-2 text-2xl font-bold">{project.title}</h2>

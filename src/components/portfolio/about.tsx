@@ -190,7 +190,7 @@ const About = () => {
             <div className="border-l-4 border-purple-500 pl-4">
               <h3 className="font-semibold">Software Developer</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Freelance • 2021 - 2023
+                Freelance • 2019 - 2022
               </p>
               <p className="text-gray-850 dark:text-gray-200">
                 <span className="font-mono">﹥</span> Architected cross-platform{' '}

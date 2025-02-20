@@ -35,7 +35,7 @@ const ProjectDetail = () => {
             <img
               src={project.image}
               alt={project.title}
-              className="mb-6 h-[400px] w-full rounded-lg object-cover"
+              className="mb-6 w-full rounded-lg object-contain"
             />
             <h1 className="mb-4 text-4xl font-bold">{project.title}</h1>
             <div className="mb-6 flex flex-wrap gap-2">
