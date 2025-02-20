@@ -33,11 +33,11 @@ const skillsData = {
       title: 'AI Developer',
       description: 'Machine learning and AI solutions',
     },
-    {
-      id: 'systems' as RoleType,
-      title: 'Systems Engineer',
-      description: 'System architecture and infrastructure',
-    },
+    // {
+    //   id: 'systems' as RoleType,
+    //   title: 'Systems Engineer',
+    //   description: 'System architecture and infrastructure',
+    // },
   ] as Role[],
 
   skills: [
@@ -53,6 +53,38 @@ const skillsData = {
     { name: 'PostgreSQL', categories: ['full-stack', 'systems'] },
     { name: 'Linux', categories: ['systems', 'cloud'] },
     { name: 'CI/CD', categories: ['cloud', 'full-stack'] },
+    // Undefined
+    { name: 'C++', categories: ['cloud', 'full-stack'] },
+    { name: 'Javascript', categories: ['cloud', 'full-stack'] },
+    { name: 'Typescript', categories: ['cloud', 'full-stack'] },
+    { name: 'Java', categories: ['cloud', 'full-stack'] },
+    { name: 'Bash', categories: ['cloud', 'full-stack'] },
+    { name: 'GoLang', categories: ['cloud', 'full-stack'] },
+    { name: 'YAML', categories: ['cloud', 'full-stack'] },
+    { name: 'JSON', categories: ['cloud', 'full-stack'] },
+    { name: 'HTML', categories: ['cloud', 'full-stack'] },
+    { name: 'CSS', categories: ['cloud', 'full-stack'] },
+    { name: 'TailwindCSS', categories: ['cloud', 'full-stack'] },
+    { name: 'Angular', categories: ['cloud', 'full-stack'] },
+    { name: 'NextJS', categories: ['cloud', 'full-stack'] },
+    { name: 'GraphQL', categories: ['cloud', 'full-stack'] },
+    { name: 'Rest APIs', categories: ['cloud', 'full-stack'] },
+    { name: 'MySQL', categories: ['cloud', 'full-stack'] },
+    { name: 'NoSQL', categories: ['cloud', 'full-stack'] },
+    { name: 'Redis', categories: ['cloud', 'full-stack'] },
+    { name: 'SQLite', categories: ['cloud', 'full-stack'] },
+    { name: 'Terraform', categories: ['cloud', 'full-stack'] },
+    { name: 'Ansible', categories: ['cloud', 'full-stack'] },
+    { name: 'Helm', categories: ['cloud', 'full-stack'] },
+    { name: 'Microservices', categories: ['cloud', 'full-stack'] },
+    { name: 'Grafana', categories: ['cloud', 'full-stack'] },
+    { name: 'Prometheus', categories: ['cloud', 'full-stack'] },
+    { name: 'LangChain', categories: ['cloud', 'full-stack'] },
+    { name: 'LangGraph', categories: ['cloud', 'full-stack'] },
+    { name: 'LangFuse', categories: ['cloud', 'full-stack'] },
+    { name: 'Flask', categories: ['cloud', 'full-stack'] },
+    { name: 'Django', categories: ['cloud', 'full-stack'] },
+    { name: 'Git', categories: ['cloud', 'full-stack'] },
   ] as Skill[],
 };
 
@@ -272,12 +304,12 @@ const About = () => {
             onValueChange={(value) => setSelectedRole(value as RoleType)}
             className="mb-6"
           >
-            <TabsList className="grid w-full grid-cols-2 bg-stone-300 lg:grid-cols-4 dark:bg-stone-600">
+            <TabsList className="grid w-full grid-cols-3 gap-4">
               {skillsData.roles.map((role) => (
                 <TabsTrigger
                   key={role.id}
                   value={role.id}
-                  className="data-[state=active]:bg-stone-100 data-[state=active]:text-stone-900 dark:data-[state=active]:bg-stone-900 dark:data-[state=active]:text-stone-100"
+                  className="data-[state=active]:bg-stone-300 data-[state=active]:text-stone-900 dark:data-[state=active]:bg-stone-600 dark:data-[state=active]:text-stone-100"
                 >
                   {role.title}
                 </TabsTrigger>
