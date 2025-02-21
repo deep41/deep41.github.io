@@ -1,92 +1,4 @@
 import { Link } from 'react-router';
-import { useState } from 'react';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
-type Skill = {
-  name: string;
-  categories: RoleType[];
-};
-
-type Role = {
-  id: RoleType;
-  title: string;
-  description: string;
-};
-
-type RoleType = 'full-stack' | 'cloud' | 'ai' | 'systems';
-
-const skillsData = {
-  roles: [
-    {
-      id: 'full-stack' as RoleType,
-      title: 'Full Stack Engineer',
-      description: 'End-to-end application development',
-    },
-    {
-      id: 'cloud' as RoleType,
-      title: 'Cloud Engineer',
-      description: 'Cloud infrastructure and DevOps',
-    },
-    {
-      id: 'ai' as RoleType,
-      title: 'AI Developer',
-      description: 'Machine learning and AI solutions',
-    },
-    // {
-    //   id: 'systems' as RoleType,
-    //   title: 'Systems Engineer',
-    //   description: 'System architecture and infrastructure',
-    // },
-  ] as Role[],
-
-  skills: [
-    { name: 'React', categories: ['full-stack', 'ai'] },
-    { name: 'Node.js', categories: ['full-stack'] },
-    { name: 'Python', categories: ['ai', 'systems'] },
-    { name: 'AWS', categories: ['cloud', 'full-stack'] },
-    { name: 'Docker', categories: ['cloud', 'systems'] },
-    { name: 'Kubernetes', categories: ['cloud', 'systems'] },
-    { name: 'TensorFlow', categories: ['ai'] },
-    { name: 'PyTorch', categories: ['ai'] },
-    { name: 'MongoDB', categories: ['full-stack'] },
-    { name: 'PostgreSQL', categories: ['full-stack', 'systems'] },
-    { name: 'Linux', categories: ['systems', 'cloud'] },
-    { name: 'CI/CD', categories: ['cloud', 'full-stack'] },
-    // Undefined
-    { name: 'C++', categories: ['cloud', 'full-stack'] },
-    { name: 'Javascript', categories: ['cloud', 'full-stack'] },
-    { name: 'Typescript', categories: ['cloud', 'full-stack'] },
-    { name: 'Java', categories: ['cloud', 'full-stack'] },
-    { name: 'Bash', categories: ['cloud', 'full-stack'] },
-    { name: 'GoLang', categories: ['cloud', 'full-stack'] },
-    { name: 'YAML', categories: ['cloud', 'full-stack'] },
-    { name: 'JSON', categories: ['cloud', 'full-stack'] },
-    { name: 'HTML', categories: ['cloud', 'full-stack'] },
-    { name: 'CSS', categories: ['cloud', 'full-stack'] },
-    { name: 'TailwindCSS', categories: ['cloud', 'full-stack'] },
-    { name: 'Angular', categories: ['cloud', 'full-stack'] },
-    { name: 'NextJS', categories: ['cloud', 'full-stack'] },
-    { name: 'GraphQL', categories: ['cloud', 'full-stack'] },
-    { name: 'Rest APIs', categories: ['cloud', 'full-stack'] },
-    { name: 'MySQL', categories: ['cloud', 'full-stack'] },
-    { name: 'NoSQL', categories: ['cloud', 'full-stack'] },
-    { name: 'Redis', categories: ['cloud', 'full-stack'] },
-    { name: 'SQLite', categories: ['cloud', 'full-stack'] },
-    { name: 'Terraform', categories: ['cloud', 'full-stack'] },
-    { name: 'Ansible', categories: ['cloud', 'full-stack'] },
-    { name: 'Helm', categories: ['cloud', 'full-stack'] },
-    { name: 'Microservices', categories: ['cloud', 'full-stack'] },
-    { name: 'Grafana', categories: ['cloud', 'full-stack'] },
-    { name: 'Prometheus', categories: ['cloud', 'full-stack'] },
-    { name: 'LangChain', categories: ['cloud', 'full-stack'] },
-    { name: 'LangGraph', categories: ['cloud', 'full-stack'] },
-    { name: 'LangFuse', categories: ['cloud', 'full-stack'] },
-    { name: 'Flask', categories: ['cloud', 'full-stack'] },
-    { name: 'Django', categories: ['cloud', 'full-stack'] },
-    { name: 'Git', categories: ['cloud', 'full-stack'] },
-  ] as Skill[],
-};
 
 const education = [
   {
@@ -115,13 +27,6 @@ const certifications = [
 ];
 
 const About = () => {
-  const [selectedRole, setSelectedRole] = useState<RoleType>('full-stack');
-
-  const isSkillHighlighted = (skillCategories: RoleType[]) => {
-    if (!selectedRole) return true;
-    return skillCategories.includes(selectedRole);
-  };
-
   return (
     <div className="mx-auto max-w-[1000px] px-4 py-16">
       {/* About Me Section */}
@@ -286,61 +191,6 @@ const About = () => {
                 </p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* Skills Explorer Section */}
-        <section className="mt-12">
-          <h2 className="mb-6 text-2xl font-bold">Skills Explorer</h2>
-          <p className="mb-4">
-            Explore my skills by selecting a role and see how they match with my
-            skills.
-          </p>
-
-          {/* Role Selection Tabs */}
-          <Tabs
-            defaultValue="full-stack"
-            value={selectedRole}
-            onValueChange={(value) => setSelectedRole(value as RoleType)}
-            className="mb-6"
-          >
-            <TabsList className="grid w-full grid-cols-3 gap-4">
-              {skillsData.roles.map((role) => (
-                <TabsTrigger
-                  key={role.id}
-                  value={role.id}
-                  className="data-[state=active]:bg-stone-300 data-[state=active]:text-stone-900 dark:data-[state=active]:bg-stone-600 dark:data-[state=active]:text-stone-100"
-                >
-                  {role.title}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-          </Tabs>
-
-          {/* Skills Grid */}
-          <div className="flex flex-wrap gap-2">
-            {skillsData.skills
-              .sort((a, b) => {
-                const aHighlighted = isSkillHighlighted(a.categories);
-                const bHighlighted = isSkillHighlighted(b.categories);
-                return Number(bHighlighted) - Number(aHighlighted);
-              })
-              .map((skill) => {
-                const highlighted = isSkillHighlighted(skill.categories);
-                return (
-                  <Badge
-                    key={skill.name}
-                    variant="secondary"
-                    className={`flex transform items-center justify-center border border-gray-200 px-4 py-2 text-sm transition-all duration-300 hover:scale-105 motion-safe:animate-in motion-safe:fade-in-25 dark:border-gray-800 ${
-                      highlighted
-                        ? 'scale-105 border-stone-400 bg-stone-200 dark:border-stone-500 dark:bg-stone-300 dark:text-black'
-                        : 'bg-white hover:bg-gray-50 dark:bg-stone-700 dark:hover:bg-stone-800'
-                    } `}
-                  >
-                    {skill.name}
-                  </Badge>
-                );
-              })}
           </div>
         </section>
       </section>
