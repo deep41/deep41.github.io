@@ -9,12 +9,14 @@ import ProjectsPage from '@/components/projects/ProjectsPage';
 import Intro from '@/components/home/Intro';
 import ProjectDetail from '@/components/projects/ProjectDetail';
 import { Toaster } from '@/components/ui/toaster';
+import Tetris from '@/components/games/Tetris';
+import Games from '@/components/games/Games';
 
 function App() {
   return (
     <div className="text-black dark:text-white">
       <Router>
-        <div className="bg-gray-100 transition lg:pb-8 dark:bg-zinc-900">
+        <div className="bg-gray-100  dark:bg-zinc-900">
           <Header />
           <Routes>
             <Route
@@ -67,6 +69,15 @@ function App() {
             />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/tetris" element={<Tetris />} />
+            <Route
+              path="/games"
+              element={
+                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
+                  <Games />
+                </div>
+              }
+            />
           </Routes>
         </div>
       </Router>

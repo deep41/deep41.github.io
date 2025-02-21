@@ -64,6 +64,12 @@ const Header = () => {
           >
             /contact
           </Link>
+          <Link
+            to="/games"
+            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
+          >
+            /games
+          </Link>
         </div>
         <button
           className="rounded-md p-2 font-['JetBrains_Mono'] text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800"
