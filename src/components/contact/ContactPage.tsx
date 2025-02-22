@@ -55,7 +55,7 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="container mx-auto min-h-screen px-4 py-8">
+    <div className="container mx-auto h-[calc(100vh-68px)] px-4 py-8">
       <div className="mx-auto max-w-2xl">
         <div className="mb-8 space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">Get in Touch</h1>

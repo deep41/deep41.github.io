@@ -22,7 +22,7 @@ const ProjectsPage = () => {
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <div className="container mx-auto min-h-screen px-4 py-8">
+    <div className="container mx-auto h-[calc(100vh-68px)] px-4 py-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
@@ -34,7 +34,7 @@ const ProjectsPage = () => {
         <div className="grid gap-6">
           {displayedProjects.map((project, index) => (
             <Link key={index} to={`/projects/${project.slug}`}>
-              <Card className="dark:bg-stone-800 transition-transform hover:scale-[1.02]">
+              <Card className="bg-stone-200/60 border-stone-400 dark:border-stone-600 dark:bg-stone-800 transition-transform hover:scale-[1.02]">
                 <CardContent className="p-6">
                   <div className="grid gap-6 md:grid-cols-2">
                     <img

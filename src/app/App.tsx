@@ -22,7 +22,7 @@ function App() {
             <Route
               path="/"
               element={
-                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
+                <div className="w-full bg-stone-100 dark:bg-stone-900 h-[calc(100vh-68px)] overflow-auto">
                   <Intro />
                   <BlogList />
                 </div>
@@ -44,7 +44,6 @@ function App() {
                     <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
                       <div className="md:col-span-2 lg:col-span-3">
                         <About />
-                        <div className="h-10" />
                       </div>
                     </div>
                   </div>
