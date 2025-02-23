@@ -16,13 +16,13 @@ function App() {
   return (
     <div className="text-black dark:text-white">
       <Router>
-        <div className="bg-gray-100  dark:bg-zinc-900">
+        <div className="bg-gray-100 dark:bg-zinc-900">
           <Header />
           <Routes>
             <Route
               path="/"
               element={
-                <div className="w-full bg-stone-100 dark:bg-stone-900 h-[calc(100vh-68px)] overflow-auto">
+                <div className="h-[calc(100vh-68px)] w-full overflow-auto bg-stone-100 dark:bg-stone-900">
                   <Intro />
                   <BlogList />
                 </div>

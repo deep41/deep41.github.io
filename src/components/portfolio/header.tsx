@@ -44,32 +44,32 @@ const Header = () => {
             to="/"
             className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
-            /home
+            Home
           </Link>
           <Link
             to="/about"
             className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
-            /about
+            About
           </Link>
           <Link
             to="/projects"
             className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
-            /projects
+            Projects
           </Link>
           <Link
             to="/contact"
             className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
-            /contact
+            Contact
           </Link>
-          <Link
+          {/* <Link
             to="/games"
             className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
           >
-            /games
-          </Link>
+            Games
+          </Link> */}
         </div>
         <button
           className="rounded-md p-2 font-['JetBrains_Mono'] text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800"
