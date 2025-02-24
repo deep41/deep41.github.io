@@ -14,7 +14,7 @@ import Games from '@/components/games/Games';
 
 function App() {
   return (
-    <div className="text-black dark:text-white">
+    <div className="text-black dark:text-white" style={{fontFamily: 'Geist'}}>
       <Router>
         <div className="bg-gray-100 dark:bg-zinc-900">
           <Header />

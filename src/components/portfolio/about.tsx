@@ -78,17 +78,17 @@ const About = () => {
                 NC State University • 2024 - Present
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Developed a RAG AI chatbot
+                <span className="font-mono">•</span> Developed a RAG AI chatbot
                 to analyze course evaluations of students, adopted by 30+
                 professors.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Integrated prompt
+                <span className="font-mono">•</span> Integrated prompt
                 management into Langfuse, enabling easy prompt switching and
                 performance tracking.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Optimized RAG pipeline,
+                <span className="font-mono">•</span> Optimized RAG pipeline,
                 boosting accuracy by 30% through efficient file ingestion and
                 retrieval improvement.
               </p>
@@ -99,38 +99,43 @@ const About = () => {
                 GE HealthCare (contractor) • 2022 - 2024
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Transitioned a monolithic
+                <span className="font-mono">•</span> Transitioned a monolithic
                 frontend application to micro frontends, achieving a 90%
                 reduction in load time.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Collaborated on migrating
+                <span className="font-mono">•</span> Collaborated on migrating
                 services to EKS, enhancing CI/CD efficiency and boosting
                 delivery.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Built a faster HTML5 time
+                <span className="font-mono">•</span> Wrote 250+ of Angular tests
+                and patched vulnerabilities, reducing risks by 12%, boosting
+                system stability.
+              </p>
+              <p className="text-gray-850 dark:text-gray-200">
+                <span className="font-mono">•</span> Built a faster HTML5 time
                 series viewer, speeding annotation and labelling by 40% with
                 seamless integration.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Authored guidebooks on
+                <span className="font-mono">•</span> Authored guidebooks on
                 cloud migration for the adoption of in-house solutions built on
                 EKS.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Engineered a data
-                ingestion layer to connect legacy systems, enabling secure
-                ingestion of medical images.
+                <span className="font-mono">•</span> Engineered a data ingestion
+                layer to connect legacy systems, enabling secure ingestion of
+                medical images.
               </p>
             </div>
             <div className="border-l-4 border-purple-500 pl-4">
               <h3 className="font-semibold">Software Developer</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Freelance • 2019 - 2022
+                Freelance • 2019 - 2021
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Architected cross-platform{' '}
+                <span className="font-mono">•</span> Architected cross-platform{' '}
                 <span className="">
                   <Link
                     to="https://qr1.be/16PB"
@@ -145,12 +150,12 @@ const About = () => {
                 with real-time chat, infinite feed, online/offline data sync.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Engineered a scalable
+                <span className="font-mono">•</span> Engineered a scalable
                 multi-tenant system, boosting onboarding speed by 50% while
                 ensuring data security.
               </p>
               <p className="text-gray-850 dark:text-gray-200">
-                <span className="font-mono">﹥</span> Implemented user privacy
+                <span className="font-mono">•</span> Implemented user privacy
                 settings and data protection measures in full compliance with
                 CCPA regulation.
               </p>

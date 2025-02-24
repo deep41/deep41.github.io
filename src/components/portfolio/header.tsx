@@ -38,35 +38,35 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-stone-100 px-4 py-4 transition dark:bg-stone-900">
-      <nav className="mx-auto flex max-w-[1000px] items-center justify-between">
-        <div className="flex flex-1 items-center space-x-12 font-['JetBrains_Mono']">
+      <nav className="mx-auto flex max-w-[1000px] items-center justify-between ">
+        <div className="flex flex-1 items-center space-x-12 font-mono text-lg">
           <Link
             to="/"
-            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
+            className={` transition hover:scale-110 ${hoverGradient}`}
           >
             Home
           </Link>
           <Link
             to="/about"
-            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
+            className={` transition hover:scale-110 ${hoverGradient}`}
           >
             About
           </Link>
           <Link
             to="/projects"
-            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
+            className={` transition hover:scale-110 ${hoverGradient}`}
           >
             Projects
           </Link>
           <Link
             to="/contact"
-            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
+            className={` transition hover:scale-110 ${hoverGradient}`}
           >
             Contact
           </Link>
           {/* <Link
             to="/games"
-            className={`text-sm font-medium transition hover:scale-110 ${hoverGradient}`}
+            className={` font-medium transition hover:scale-110 ${hoverGradient}`}
           >
             Games
           </Link> */}
