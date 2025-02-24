@@ -22,7 +22,7 @@ const ProjectsPage = () => {
   const displayedProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
-    <div className="container mx-auto h-[calc(100vh-68px)] px-4 py-8">
+    <div className="container mx-auto px-4 py-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
@@ -57,26 +57,48 @@ const ProjectsPage = () => {
                       <div className="flex gap-4">
                         {project.github && (
                           <Button variant="outline" size="sm" asChild>
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <Github className="mr-2 h-4 w-4" />
-                              Code
-                            </a>
+                            {project.github.startsWith('/') ? (
+                              <Link
+                                to={project.github}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Github className="mr-2 h-4 w-4" />
+                                Code
+                              </Link>
+                            ) : (
+                              <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Github className="mr-2 h-4 w-4" />
+                                Code
+                              </a>
+                            )}
                           </Button>
                         )}
                         {project.live && (
-                          <Button size="sm" asChild className='bg-stone-800 dark:bg-stone-200' >
-                            <a
-                              href={project.live}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <ExternalLink className="mr-2 h-4 w-4" />
-                              Live Demo
-                            </a>
+                          <Button size="sm" asChild className='bg-stone-800 dark:bg-stone-200'>
+                            {project.live.startsWith('/') ? (
+                              <Link
+                                to={project.live}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <ExternalLink className="mr-2 h-4 w-4" />
+                                Live Demo
+                              </Link>
+                            ) : (
+                              <a
+                                href={project.live}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <ExternalLink className="mr-2 h-4 w-4" />
+                                Live Demo
+                              </a>
+                            )}
                           </Button>
                         )}
                       </div>

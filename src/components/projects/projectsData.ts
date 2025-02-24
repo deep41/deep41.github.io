@@ -29,6 +29,15 @@ const projects: ProjectItem[] = [
     image: '/projects/leetrevise/leetrevise.png',
     slug: 'leetrevise',
   },
+  {
+    title: 'Tetris',
+    description:
+      'Join the fun and challenge your skills with our classic Tetris game! Play to clear lines and aim for the highest score—how high can you go?',
+    tags: ['React', 'Typescript'],
+    live: '/tetris',
+    image: '/projects/tetris/tetris.png',
+    slug: 'tetris',
+  },
 ];
 
 export default projects; 
