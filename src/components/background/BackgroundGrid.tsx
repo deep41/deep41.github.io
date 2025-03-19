@@ -2,6 +2,12 @@ import { useEffect, useRef } from 'react';
 // @ts-ignore
 import * as THREE from 'three';
 
+// Define type for position coordinates
+interface Position {
+  x: number;
+  y: number;
+}
+
 const BackgroundGrid = () => {
   // Configuration settings
   const settings = {
@@ -28,18 +34,19 @@ const BackgroundGrid = () => {
     'W', '@', '#'
   ];
 
-  const containerRef = useRef(null);
-  const mousePosRef = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const mousePosRef = useRef<Position>({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
   useEffect(() => {
     // Mouse movement handler
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       mousePosRef.current = { x: e.clientX, y: window.innerHeight - e.clientY };
     };
     window.addEventListener('mousemove', handleMouseMove);
 
     // Three.js setup
     const container = containerRef.current;
+    if (!container) return;
     const width = container.clientWidth;
     const height = container.clientHeight;
 
@@ -59,6 +66,7 @@ const BackgroundGrid = () => {
       canvas.width = canvasWidth;
       canvas.height = canvasHeight;
       const ctx = canvas.getContext('2d');
+      if (!ctx) return new THREE.Texture();
       ctx.font = `${settings.fontSize}px monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
