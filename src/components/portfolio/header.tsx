@@ -37,7 +37,7 @@ const Header = () => {
   const hoverGradient = `hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent hover:from-blue-500 hover:to-purple-500`;
 
   return (
-    <header className="sticky top-0 z-50 bg-stone-100 px-4 py-4 transition dark:bg-stone-900">
+    <header className="sticky top-0 z-50 bg-transparent px-4 py-4 transition">
       <nav className="mx-auto flex max-w-[1000px] items-center justify-between ">
         <div className="flex flex-1 items-center space-x-12 font-mono text-lg">
           <Link
@@ -72,7 +72,7 @@ const Header = () => {
           </Link> */}
         </div>
         <button
-          className="rounded-md p-2 font-['JetBrains_Mono'] text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-zinc-800"
+          className="rounded-md p-2 font-['JetBrains_Mono'] text-gray-700 hover:bg-gray-100/70 dark:text-gray-300 dark:hover:bg-zinc-800/70"
           onClick={toggleTheme}
         >
           <IoSunny className="block h-5 w-5 dark:hidden" />
