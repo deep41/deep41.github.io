@@ -4,16 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
 import projects from './projectsData'; // Import the project data
 
-export type ProjectItem = {
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-  live?: string;
-  github?: string;
-  slug: string;
-};
-
 const ProjectsPage = () => {
   return (
     <div className="container mx-auto min-h-screen px-4 py-16 max-w-[1000px]">
@@ -31,9 +21,9 @@ const ProjectsPage = () => {
             </div>
             <CardContent className="p-6">
               <h3 className="mb-2 text-xl font-semibold text-white">{project.title}</h3>
-              <p className="mb-4 text-gray-300">{project.description}</p>
+              <p className="mb-4 text-sm text-gray-300">{project.description}</p>
               <div className="mb-4 flex flex-wrap gap-2">
-                {project.tags.map((tag, tagIndex) => (
+                {project.tags.map((tag: string, tagIndex: number) => (
                   <Badge 
                     key={tag} 
                     variant="secondary" 

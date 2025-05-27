@@ -1,7 +1,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink, ArrowLeft, Star } from 'lucide-react';
-import type { ProjectItem } from './ProjectsPage';
+import type { ProjectItem } from '../../types/Portfolio';
 
 interface ProjectDetailProps {
   project: ProjectItem;

@@ -1,6 +1,6 @@
 ---
 import ProjectDetail from './ProjectDetail.tsx';
-import type { ProjectItem } from './ProjectsPage';
+import type { ProjectItem } from '../../types/Portfolio';
 
 interface Props {
   project: ProjectItem;
@@ -48,7 +48,7 @@ if (entry) {
 
                 <!-- Tags -->
                 <div class="flex flex-wrap gap-2">
-                  {project.tags.map((tag, index) => (
+                  {project.tags.map((tag: string, index: number) => (
                     <span class={`px-3 py-1 text-sm font-medium border rounded-md ${
                       index % 4 === 0 ? 'bg-blue-500/10 border-blue-400/30 text-blue-300' :
                       index % 4 === 1 ? 'bg-purple-500/10 border-purple-400/30 text-purple-300' :
@@ -135,7 +135,7 @@ if (entry) {
                   Technologies Used
                 </h3>
                 <div class="space-y-2">
-                  {project.tags.map((tag, index) => (
+                  {project.tags.map((tag: string, index: number) => (
                     <div class={`flex items-center justify-between p-2 rounded-lg ${
                       index % 4 === 0 ? 'bg-blue-500/10' :
                       index % 4 === 1 ? 'bg-purple-500/10' :
