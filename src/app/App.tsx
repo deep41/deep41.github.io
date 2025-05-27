@@ -14,15 +14,15 @@ import Games from '@/components/games/Games';
 
 function App() {
   return (
-    <div className="text-black dark:text-white" style={{fontFamily: 'Geist'}}>
+    <div className="min-h-screen text-black dark:text-white bg-gray-50 dark:bg-gray-900" style={{fontFamily: 'Geist'}}>
       <Router>
-        <div className="bg-gray-100 dark:bg-zinc-900">
+        <div className="min-h-screen">
           <Header />
           <Routes>
             <Route
               path="/"
               element={
-                <div className="h-[calc(100vh-68px)] w-full overflow-auto bg-stone-100 dark:bg-stone-900">
+                <div className="w-full">
                   <Intro />
                   <BlogList />
                 </div>
@@ -31,7 +31,7 @@ function App() {
             <Route
               path="/blog/:id"
               element={
-                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
                   <BlogDetail />
                 </div>
               }
@@ -39,9 +39,9 @@ function App() {
             <Route
               path="/about"
               element={
-                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
-                  <div>
-                    <div className="md:grid md:grid-cols-2 md:gap-4 lg:gap-8">
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
+                  <div className="py-8">
+                    <div className="md:grid md:grid-cols-1 md:gap-4 lg:gap-8">
                       <div className="md:col-span-2 lg:col-span-3">
                         <About />
                       </div>
@@ -53,7 +53,7 @@ function App() {
             <Route
               path="/projects"
               element={
-                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
                   <ProjectsPage />
                 </div>
               }
@@ -61,18 +61,31 @@ function App() {
             <Route
               path="/contact"
               element={
-                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
                   <ContactPage />
                 </div>
               }
             />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:slug" element={<ProjectDetail />} />
-            <Route path="/tetris" element={<Tetris />} />
+            <Route 
+              path="/projects/:slug" 
+              element={
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
+                  <ProjectDetail />
+                </div>
+              } 
+            />
+            <Route 
+              path="/tetris" 
+              element={
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
+                  <Tetris />
+                </div>
+              } 
+            />
             <Route
               path="/games"
               element={
-                <div className="w-full bg-stone-100 transition dark:bg-stone-900">
+                <div className="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
                   <Games />
                 </div>
               }
