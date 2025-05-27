@@ -2,7 +2,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router';
 import { useState } from 'react';
 import projects from './projectsData'; // Import the project data
 
@@ -18,109 +17,77 @@ export type ProjectItem = {
 };
 
 const ProjectsPage = () => {
-  const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? projects : projects.slice(0, 3);
+  const [filter, setFilter] = useState('All');
+
+  const allTags = ['All', ...Array.from(new Set(projects.flatMap(project => project.tags)))];
+  const filteredProjects = filter === 'All' 
+    ? projects 
+    : projects.filter(project => project.tags.includes(filter));
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-8 space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
-          <p className="text-muted-foreground">
-            A collection of my recent work and side projects.
-          </p>
-        </div>
+    <div className="container mx-auto min-h-screen px-4 py-16 max-w-[1000px]">
+      <h1 className="mb-8 text-3xl font-bold">Projects</h1>
+      
+      {/* Filter buttons */}
+      <div className="mb-8 flex flex-wrap gap-2">
+        {allTags.map(tag => (
+          <Button
+            key={tag}
+            variant={filter === tag ? "default" : "outline"}
+            onClick={() => setFilter(tag)}
+            className="text-sm"
+          >
+            {tag}
+          </Button>
+        ))}
+      </div>
 
-        <div className="grid gap-6">
-          {displayedProjects.map((project, index) => (
-            <Link key={index} to={`/projects/${project.slug}`}>
-              <Card className="bg-stone-200/60 border-stone-400 dark:border-stone-600 dark:bg-stone-800 transition-transform hover:scale-[1.02]">
-                <CardContent className="p-6">
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full rounded-lg object-contain"
-                    />
-                    <div>
-                      <h2 className="mb-2 text-2xl font-bold">{project.title}</h2>
-                      <p className="mb-4 text-muted-foreground">
-                        {project.description}
-                      </p>
-                      <div className="mb-4 flex flex-wrap gap-2">
-                        {project.tags.map((tag, i) => (
-                          <Badge key={i} variant="secondary" className='dark:bg-stone-700'>
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <div className="flex gap-4">
-                        {project.github && (
-                          <Button variant="outline" size="sm" asChild>
-                            {project.github.startsWith('/') ? (
-                              <Link
-                                to={project.github}
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <Github className="mr-2 h-4 w-4" />
-                                Code
-                              </Link>
-                            ) : (
-                              <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <Github className="mr-2 h-4 w-4" />
-                                Code
-                              </a>
-                            )}
-                          </Button>
-                        )}
-                        {project.live && (
-                          <Button size="sm" asChild className='bg-stone-800 dark:bg-stone-200'>
-                            {project.live.startsWith('/') ? (
-                              <Link
-                                to={project.live}
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <ExternalLink className="mr-2 h-4 w-4" />
-                                Live Demo
-                              </Link>
-                            ) : (
-                              <a
-                                href={project.live}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <ExternalLink className="mr-2 h-4 w-4" />
-                                Live Demo
-                              </a>
-                            )}
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        {!showAll && projects.length > 3 && (
-          <div className="mt-8 text-center">
-            <Button
-              onClick={() => setShowAll(true)}
-              variant="outline"
-              size="lg"
-            >
-              Show All Projects
-            </Button>
-          </div>
-        )}
+      <div className="grid gap-6 md:grid-cols-2">
+        {filteredProjects.map((project) => (
+          <Card key={project.slug} className="overflow-hidden">
+            <div className="aspect-video overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <CardContent className="p-6">
+              <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>
+              <p className="mb-4 text-muted-foreground">{project.description}</p>
+              <div className="mb-4 flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                {project.live && (
+                  <Button size="sm" asChild>
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+                {project.github && (
+                  <Button size="sm" variant="outline" asChild>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </a>
+                  </Button>
+                )}
+                <Button size="sm" variant="ghost" asChild>
+                  <a href={`/projects/${project.slug}`}>
+                    View Details
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );

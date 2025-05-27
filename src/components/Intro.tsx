@@ -1,6 +1,4 @@
-import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin, Download, Mail } from 'lucide-react';
-import { Link } from 'react-router';
 
 const Intro = () => {
   return (
@@ -61,88 +59,60 @@ const Intro = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button
-                asChild
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
+              <a
+                href="/projects"
+                className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg group"
               >
-                <Link to="/projects">
-                  <span>View My Work</span>
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
+                <span>View My Work</span>
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
               
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300"
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 rounded-lg"
               >
-                <Link to="/contact">
-                  <Mail className="mr-2 h-4 w-4" />
-                  Get In Touch
-                </Link>
-              </Button>
+                <Mail className="mr-2 h-4 w-4" />
+                Get In Touch
+              </a>
             </div>
 
             {/* Social Links */}
             <div className="flex gap-4 justify-center lg:justify-start">
-              <Button
-                asChild
-                variant="ghost"
-                size="lg"
-                className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110"
+              <a
+                href="https://github.com/deep41"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 rounded-lg"
               >
-                <a
-                  href="https://github.com/deep41"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <Github className="h-5 w-5" />
-                  <span className="ml-2 hidden sm:inline">GitHub</span>
-                </a>
-              </Button>
+                <Github className="h-5 w-5" />
+                <span className="ml-2 hidden sm:inline">GitHub</span>
+              </a>
               
-              <Button
-                asChild
-                variant="ghost"
-                size="lg"
-                className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110"
+              <a
+                href="https://linkedin.com/in/deep41"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 rounded-lg"
               >
-                <a
-                  href="https://linkedin.com/in/deep41"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="ml-2 hidden sm:inline">LinkedIn</span>
-                </a>
-              </Button>
+                <Linkedin className="h-5 w-5" />
+                <span className="ml-2 hidden sm:inline">LinkedIn</span>
+              </a>
               
-              <Button
-                asChild
-                variant="ghost"
-                size="lg"
-                className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110"
+              <a
+                href="https://drive.google.com/file/d/1JJkVUbDJ5nUgM---T8w4MxKQgpMeTgWe/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 hover:scale-110 rounded-lg"
               >
-                <a
-                  href="https://drive.google.com/file/d/1JJkVUbDJ5nUgM---T8w4MxKQgpMeTgWe/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center"
-                >
-                  <Download className="h-5 w-5" />
-                  <span className="ml-2 hidden sm:inline">Resume</span>
-                </a>
-              </Button>
+                <Download className="h-5 w-5" />
+                <span className="ml-2 hidden sm:inline">Resume</span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce ">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -152,4 +122,4 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default Intro; 

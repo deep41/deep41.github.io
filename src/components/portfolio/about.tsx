@@ -1,5 +1,3 @@
-import { Link } from 'react-router';
-
 const education = [
   {
     title: 'Master of Computer Science',
@@ -59,12 +57,12 @@ const About = () => {
           <p className="mb-4">
             Check out my latest projects and see what I've been building.
           </p>
-          <Link
-            to="/projects"
+          <a
+            href="/projects"
             className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-500 to-purple-500 px-4 py-2 text-white transition-all hover:from-blue-600 hover:to-purple-600"
           >
             View Projects →
-          </Link>
+          </a>
         </div>
 
         {/* Experience Section */}
@@ -137,15 +135,17 @@ const About = () => {
               <p className="text-gray-850 dark:text-gray-200">
                 <span className="font-mono">•</span> Architected cross-platform{' '}
                 <span className="">
-                  <Link
-                    to="https://qr1.be/16PB"
+                  <a
+                    href="https://qr1.be/16PB"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-baseline border-b border-dashed border-gray-500 font-mono text-sm hover:text-gray-700 dark:border-gray-400 dark:hover:text-gray-300"
                   >
                     Flutter social media app
                     <span className="ml-0.5 font-mono text-xl leading-none">
                       ↗
                     </span>
-                  </Link>
+                  </a>
                 </span>{' '}
                 with real-time chat, infinite feed, online/offline data sync.
               </p>

@@ -1,4 +1,3 @@
-import { Link } from 'react-router';
 import { blogs } from '../../data/blogs';
 import {
   Card,
@@ -31,7 +30,7 @@ const BlogList = () => {
           {/* Blog Grid */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {blogs.map((blog, index) => (
-              <Link key={blog.id} to={`/blog/${blog.id}`} className="group">
+              <a key={blog.id} href={`/blog/${blog.id}`} className="group">
                 <Card className="h-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/20 group-hover:-translate-y-2">
                   <CardHeader className="pb-4">
                     {/* Blog Number Badge */}
@@ -76,7 +75,7 @@ const BlogList = () => {
                     </div>
                   </CardContent>
                 </Card>
-              </Link>
+              </a>
             ))}
           </div>
 
