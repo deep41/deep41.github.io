@@ -2,12 +2,18 @@ import ReactMarkdown from 'react-markdown';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import type { Blog } from '../../types/Blog';
 import './BlogDetail.css';
+import { useEffect } from 'react';
+import { trackBlogView } from '../GoogleAnalytics';
 
 interface BlogDetailProps {
   blog: Blog;
 }
 
 const BlogDetail = ({ blog }: BlogDetailProps) => {
+  useEffect(() => {
+    // Track blog view when component mounts
+    trackBlogView(blog.title);
+  }, [blog.title]);
   return (
     <div className="container mx-auto min-h-screen px-4 py-16 max-w-[1000px]">
       <div className="mx-auto max-w-4xl">
