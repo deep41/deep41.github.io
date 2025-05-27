@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import BlogDetail from '../../components/blog/BlogDetail.tsx';
+import { blogs } from '../../data/blogs';
+
+export async function getStaticPaths() {
+  return blogs.map((blog) => ({
+    params: { id: blog.id },
+    props: { blog },
+  }));
+}
+
+const { blog } = Astro.props;
+---
+
+<Layout title={`${blog.title} - Deepak's Blog`} description={blog.description}>
+  <Header />
+  <main class="w-full bg-[#0a0a0a] min-h-[calc(100vh-80px)]">
+    <BlogDetail blog={blog} client:load />
+  </main>
+</Layout> 

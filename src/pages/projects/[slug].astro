@@ -1,0 +1,28 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import ProjectDetailWithMarkdown from '../../components/projects/ProjectDetailWithMarkdown.astro';
+import projects from '../../components/projects/projectsData';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection('projects');
+  
+  return projects.map((project) => {
+    const entry = projectEntries.find(entry => entry.slug === project.slug);
+    return {
+      params: { slug: project.slug },
+      props: { project, entry },
+    };
+  });
+}
+
+const { project, entry } = Astro.props;
+---
+
+<Layout title={`${project.title} - Deepak's Portfolio`} description={project.description}>
+  <Header />
+  <main class="w-full bg-[#0a0a0a] min-h-[calc(100vh-80px)]">
+    <ProjectDetailWithMarkdown project={project} entry={entry} />
+  </main>
+</Layout> 

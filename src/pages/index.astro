@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Intro from '../components/Intro.tsx';
+import BlogList from '../components/blog/BlogList.tsx';
+---
+
+<Layout title="Deepak's Portfolio - Software Engineer">
+  <Header />
+  <main>
+    <Intro client:load />
+    <BlogList client:load />
+  </main>
+</Layout> 

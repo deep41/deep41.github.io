@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Deepak's Portfolio - Software Engineer passionate about building innovative solutions" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen text-white bg-black">
+    <!-- Interactive Background Canvas -->
+    <canvas 
+      id="background-canvas" 
+      style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;"
+    ></canvas>
+    
+    <div class="min-h-screen relative z-10">
+      <slot />
+    </div>
+
+    <!-- Interactive Background Script -->
+    <script src="/background.js" defer></script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style> 

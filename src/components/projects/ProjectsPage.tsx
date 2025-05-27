@@ -2,125 +2,68 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router';
-import { useState } from 'react';
 import projects from './projectsData'; // Import the project data
 
-export type ProjectItem = {
-  title: string;
-  description: string;
-  tags: string[];
-  image: string;
-  live?: string;
-  github?: string;
-  slug: string;
-  longDescription?: string;
-};
-
 const ProjectsPage = () => {
-  const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? projects : projects.slice(0, 3);
-
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-8 space-y-2">
-          <h1 className="text-4xl font-bold tracking-tight">Projects</h1>
-          <p className="text-muted-foreground">
-            A collection of my recent work and side projects.
-          </p>
-        </div>
-
-        <div className="grid gap-6">
-          {displayedProjects.map((project, index) => (
-            <Link key={index} to={`/projects/${project.slug}`}>
-              <Card className="bg-stone-200/60 border-stone-400 dark:border-stone-600 dark:bg-stone-800 transition-transform hover:scale-[1.02]">
-                <CardContent className="p-6">
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full rounded-lg object-contain"
-                    />
-                    <div>
-                      <h2 className="mb-2 text-2xl font-bold">{project.title}</h2>
-                      <p className="mb-4 text-muted-foreground">
-                        {project.description}
-                      </p>
-                      <div className="mb-4 flex flex-wrap gap-2">
-                        {project.tags.map((tag, i) => (
-                          <Badge key={i} variant="secondary" className='dark:bg-stone-700'>
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <div className="flex gap-4">
-                        {project.github && (
-                          <Button variant="outline" size="sm" asChild>
-                            {project.github.startsWith('/') ? (
-                              <Link
-                                to={project.github}
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <Github className="mr-2 h-4 w-4" />
-                                Code
-                              </Link>
-                            ) : (
-                              <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <Github className="mr-2 h-4 w-4" />
-                                Code
-                              </a>
-                            )}
-                          </Button>
-                        )}
-                        {project.live && (
-                          <Button size="sm" asChild className='bg-stone-800 dark:bg-stone-200'>
-                            {project.live.startsWith('/') ? (
-                              <Link
-                                to={project.live}
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <ExternalLink className="mr-2 h-4 w-4" />
-                                Live Demo
-                              </Link>
-                            ) : (
-                              <a
-                                href={project.live}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <ExternalLink className="mr-2 h-4 w-4" />
-                                Live Demo
-                              </a>
-                            )}
-                          </Button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </Link>
-          ))}
-        </div>
-
-        {!showAll && projects.length > 3 && (
-          <div className="mt-8 text-center">
-            <Button
-              onClick={() => setShowAll(true)}
-              variant="outline"
-              size="lg"
-            >
-              Show All Projects
-            </Button>
-          </div>
-        )}
+    <div className="container mx-auto min-h-screen px-4 py-16 max-w-[1000px]">
+      <h1 className="mb-8 text-3xl font-bold text-white">Projects</h1>
+      
+      <div className="grid gap-6 md:grid-cols-2">
+        {projects.map((project) => (
+          <Card key={project.slug} className="overflow-hidden glass-card border-white/20 interactive-hover">
+            <div className="aspect-video overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-full w-full object-cover transition-transform hover:scale-105"
+              />
+            </div>
+            <CardContent className="p-6">
+              <h3 className="mb-2 text-xl font-semibold text-white">{project.title}</h3>
+              <p className="mb-4 text-sm text-gray-300">{project.description}</p>
+              <div className="mb-4 flex flex-wrap gap-2">
+                {project.tags.map((tag: string, tagIndex: number) => (
+                  <Badge 
+                    key={tag} 
+                    variant="secondary" 
+                    className={`bg-white/10 text-gray-300 border-white/20 ${
+                      tagIndex % 4 === 0 ? 'hover:bg-blue-500/20' :
+                      tagIndex % 4 === 1 ? 'hover:bg-purple-500/20' :
+                      tagIndex % 4 === 2 ? 'hover:bg-cyan-500/20' :
+                      'hover:bg-green-500/20'
+                    } transition-colors`}
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                {project.live && (
+                  <Button size="sm" asChild className="highlight-blue hover:bg-blue-500/20 text-white border-blue-400/20">
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+                {project.github && (
+                  <Button size="sm" variant="outline" asChild className="border-purple-400/30 text-gray-300 hover:bg-purple-500/10 hover:border-purple-400/50">
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      Code
+                    </a>
+                  </Button>
+                )}
+                <Button size="sm" variant="ghost" asChild className="text-gray-300 hover:bg-cyan-500/10 hover:text-white">
+                  <a href={`/projects/${project.slug}`}>
+                    View Details
+                  </a>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );
