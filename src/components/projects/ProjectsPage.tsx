@@ -2,7 +2,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
-import { useState } from 'react';
 import projects from './projectsData'; // Import the project data
 
 export type ProjectItem = {
@@ -13,37 +12,15 @@ export type ProjectItem = {
   live?: string;
   github?: string;
   slug: string;
-  longDescription?: string;
 };
 
 const ProjectsPage = () => {
-  const [filter, setFilter] = useState('All');
-
-  const allTags = ['All', ...Array.from(new Set(projects.flatMap(project => project.tags)))];
-  const filteredProjects = filter === 'All' 
-    ? projects 
-    : projects.filter(project => project.tags.includes(filter));
-
   return (
     <div className="container mx-auto min-h-screen px-4 py-16 max-w-[1000px]">
       <h1 className="mb-8 text-3xl font-bold">Projects</h1>
       
-      {/* Filter buttons */}
-      <div className="mb-8 flex flex-wrap gap-2">
-        {allTags.map(tag => (
-          <Button
-            key={tag}
-            variant={filter === tag ? "default" : "outline"}
-            onClick={() => setFilter(tag)}
-            className="text-sm"
-          >
-            {tag}
-          </Button>
-        ))}
-      </div>
-
       <div className="grid gap-6 md:grid-cols-2">
-        {filteredProjects.map((project) => (
+        {projects.map((project) => (
           <Card key={project.slug} className="overflow-hidden">
             <div className="aspect-video overflow-hidden">
               <img

@@ -82,10 +82,14 @@ const currentPath = Astro.url.pathname;
     
     function updateIcons() {
       const isDark = document.documentElement.classList.contains('dark');
-      sunIcon.classList.toggle('hidden', isDark);
-      sunIcon.classList.toggle('block', !isDark);
-      moonIcon.classList.toggle('hidden', !isDark);
-      moonIcon.classList.toggle('block', isDark);
+      if (sunIcon) {
+        sunIcon.classList.toggle('hidden', isDark);
+        sunIcon.classList.toggle('block', !isDark);
+      }
+      if (moonIcon) {
+        moonIcon.classList.toggle('hidden', !isDark);
+        moonIcon.classList.toggle('block', isDark);
+      }
     }
     
     function toggleTheme() {

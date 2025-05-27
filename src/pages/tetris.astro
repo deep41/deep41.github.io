@@ -1,12 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import Tetris from '../components/games/Tetris.tsx';
+import TetrisGame from '../components/games/Tetris.tsx';
 ---
 
 <Layout title="Tetris Game - Deepak's Portfolio">
   <Header />
   <main>
-    <Tetris client:load />
+    <TetrisGame client:load />
   </main>
 </Layout> 

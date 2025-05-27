@@ -9,7 +9,6 @@ const projects: ProjectItem[] = [
     github: 'https://github.com/deep41/EventPlannerAI',
     image: '/projects/eventflow/eventflow.png',
     slug: 'eventplanner-ai',
-    // longDescription: 'This is the longer description!'
   },
   {
     title: 'Load balanced service orchestrator',

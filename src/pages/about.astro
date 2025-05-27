@@ -1,16 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
-import About from '../components/portfolio/about.tsx';
+import AboutComponent from '../components/portfolio/about.tsx';
 ---
 
-<Layout title="About - Deepak's Portfolio" description="Learn more about Deepak, a passionate software engineer with expertise in full-stack development and modern technologies.">
+<Layout title="About - Deepak's Portfolio" description="Learn more about Deepak's background, skills, and experience in software engineering.">
   <Header />
   <main class="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
     <div class="py-8">
       <div class="md:grid md:grid-cols-1 md:gap-4 lg:gap-8">
         <div class="md:col-span-2 lg:col-span-3">
-          <About client:load />
+          <AboutComponent client:load />
         </div>
       </div>
     </div>
