@@ -22,7 +22,7 @@ const { project, entry } = Astro.props;
 
 <Layout title={`${project.title} - Deepak's Portfolio`} description={project.description}>
   <Header />
-  <main class="w-full bg-white dark:bg-gray-900 min-h-[calc(100vh-80px)]">
+  <main class="w-full bg-[#0a0a0a] min-h-[calc(100vh-80px)]">
     <ProjectDetailWithMarkdown project={project} entry={entry} />
   </main>
 </Layout> 

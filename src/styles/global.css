@@ -5,67 +5,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(0 0% 3.9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(0 0% 3.9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(0 0% 3.9%);
-  --primary: hsl(0 0% 9%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(0 0% 96.1%);
-  --secondary-foreground: hsl(0 0% 9%);
-  --muted: hsl(0 0% 96.1%);
-  --muted-foreground: hsl(0 0% 45.1%);
-  --accent: hsl(0 0% 96.1%);
-  --accent-foreground: hsl(0 0% 9%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 89.8%);
-  --input: hsl(0 0% 89.8%);
-  --ring: hsl(0 0% 3.9%);
-  --chart-1: hsl(12 76% 61%);
-  --chart-2: hsl(173 58% 39%);
-  --chart-3: hsl(197 37% 24%);
-  --chart-4: hsl(43 74% 66%);
-  --chart-5: hsl(27 87% 67%);
-  --radius: 0.6rem;
-}
-
-.dark {
-  --background: hsl(0 0% 3.9%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(0 0% 3.9%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(0 0% 3.9%);
-  --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(0 0% 9%);
-  --secondary: hsl(0 0% 14.9%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(0 0% 14.9%);
-  --muted-foreground: hsl(0 0% 63.9%);
-  --accent: hsl(0 0% 14.9%);
-  --accent-foreground: hsl(0 0% 98%);
+  /* Dark theme with slightly brightened background */
+  --background: hsl(0 0% 4%);
+  --foreground: hsl(0 0% 90%);
+  --card: hsl(0 0% 8%);
+  --card-foreground: hsl(0 0% 90%);
+  --popover: hsl(0 0% 8%);
+  --popover-foreground: hsl(0 0% 90%);
+  --primary: hsl(0 0% 90%);
+  --primary-foreground: hsl(0 0% 10%);
+  --secondary: hsl(0 0% 15%);
+  --secondary-foreground: hsl(0 0% 90%);
+  --muted: hsl(0 0% 15%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(0 0% 20%);
+  --accent-foreground: hsl(0 0% 90%);
   --destructive: hsl(0 62.8% 30.6%);
   --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(0 0% 14.9%);
-  --input: hsl(0 0% 14.9%);
-  --ring: hsl(0 0% 83.1%);
-  --chart-1: hsl(220 70% 50%);
-  --chart-2: hsl(160 60% 45%);
-  --chart-3: hsl(30 80% 55%);
-  --chart-4: hsl(280 65% 60%);
-  --chart-5: hsl(340 75% 55%);
+  --border: hsl(0 0% 20%);
+  --input: hsl(0 0% 15%);
+  --ring: hsl(0 0% 60%);
+  --radius: 0.6rem;
+  
+  /* Subtle color highlights */
+  --highlight-blue: hsl(220 70% 60%);
+  --highlight-purple: hsl(270 70% 60%);
+  --highlight-cyan: hsl(180 70% 60%);
+  --highlight-green: hsl(120 70% 60%);
+  --highlight-orange: hsl(30 70% 60%);
+  --highlight-pink: hsl(320 70% 60%);
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+  
+  html {
+    background: #0a0a0a;
+  }
+  
   body {
     @apply bg-background text-foreground;
     font-family: 'Geist', sans-serif;
+    background: #0a0a0a;
+    overflow-x: hidden;
+  }
+  
+  /* Interactive background canvas */
+  #background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
   }
 }
 
@@ -84,6 +79,10 @@
     animation: glow 2s ease-in-out infinite alternate;
   }
   
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+  
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -100,14 +99,144 @@
   
   .backdrop-blur-glass {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .dark .backdrop-blur-glass {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(10, 10, 10, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
+  
+  .glass-card {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .highlight-gradient {
+    background: linear-gradient(135deg, 
+      rgba(100, 150, 255, 0.1) 0%, 
+      rgba(150, 100, 255, 0.15) 50%, 
+      rgba(100, 200, 255, 0.1) 100%);
+  }
+  
+  .text-highlight {
+    background: linear-gradient(135deg, 
+      hsl(220 70% 70%), 
+      hsl(270 70% 70%), 
+      hsl(180 70% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(135deg, 
+      rgba(100, 150, 255, 0.3), 
+      rgba(150, 100, 255, 0.5), 
+      rgba(100, 200, 255, 0.3)) 1;
+  }
+  
+  /* Color-specific highlights */
+  .highlight-blue {
+    background: linear-gradient(135deg, 
+      rgba(100, 150, 255, 0.1) 0%, 
+      rgba(100, 150, 255, 0.2) 50%, 
+      rgba(100, 150, 255, 0.1) 100%);
+  }
+  
+  .highlight-purple {
+    background: linear-gradient(135deg, 
+      rgba(150, 100, 255, 0.1) 0%, 
+      rgba(150, 100, 255, 0.2) 50%, 
+      rgba(150, 100, 255, 0.1) 100%);
+  }
+  
+  .highlight-cyan {
+    background: linear-gradient(135deg, 
+      rgba(100, 200, 255, 0.1) 0%, 
+      rgba(100, 200, 255, 0.2) 50%, 
+      rgba(100, 200, 255, 0.1) 100%);
+  }
+  
+  .highlight-green {
+    background: linear-gradient(135deg, 
+      rgba(100, 255, 150, 0.1) 0%, 
+      rgba(100, 255, 150, 0.2) 50%, 
+      rgba(100, 255, 150, 0.1) 100%);
+  }
+}
+
+/* Markdown About section styling */
+.markdown-about h1,
+.markdown-about h2,
+.markdown-about h3,
+.markdown-about h4,
+.markdown-about h5,
+.markdown-about h6 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.markdown-about p {
+  color: #d1d5db; /* gray-300 */
+  line-height: 1.7;
+}
+
+.markdown-about a {
+  color: #60a5fa; /* blue-400 */
+  text-decoration: underline;
+  text-decoration-color: rgba(96, 165, 250, 0.5);
+  transition: all 0.3s ease;
+}
+
+.markdown-about a:hover {
+  color: #93c5fd; /* blue-300 */
+  text-decoration-color: #93c5fd;
+}
+
+.markdown-about strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.markdown-about em {
+  color: #9ca3af; /* gray-400 */
+  font-style: italic;
+}
+
+.markdown-about ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.markdown-about li {
+  color: #d1d5db; /* gray-300 */
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.markdown-about code {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #67e8f9; /* cyan-300 */
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.markdown-about pre {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.markdown-about blockquote {
+  border-left: 4px solid rgba(96, 165, 250, 0.5);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #9ca3af; /* gray-400 */
 }
 
 @keyframes gradient {
@@ -133,10 +262,19 @@
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 20px rgba(100, 150, 255, 0.2);
   }
   to {
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+    box-shadow: 0 0 30px rgba(150, 100, 255, 0.3);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
   }
 }
 
@@ -146,26 +284,50 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #333333;
   border-radius: 4px;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: #4b5563;
-}
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #a1a1a1;
+  background: #555555;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #6b7280;
+/* Interactive elements hover effects */
+.interactive-hover {
+  transition: all 0.3s ease;
+}
+
+.interactive-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(100, 150, 255, 0.15);
+}
+
+/* Particle system styles */
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-float 6s linear infinite;
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
 } 
