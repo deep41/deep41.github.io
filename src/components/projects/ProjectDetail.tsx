@@ -2,12 +2,22 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Github, ExternalLink, ArrowLeft, Star } from 'lucide-react';
 import type { ProjectItem } from '../../types/Portfolio';
+import { useEffect } from 'react';
+import { trackProjectView, trackExternalLink } from '../GoogleAnalytics';
 
 interface ProjectDetailProps {
   project: ProjectItem;
 }
 
 const ProjectDetail = ({ project }: ProjectDetailProps) => {
+  useEffect(() => {
+    // Track project view when component mounts
+    trackProjectView(project.title);
+  }, [project.title]);
+
+  const handleExternalLink = (url: string, type: string) => {
+    trackExternalLink(url, `${project.title} - ${type}`);
+  };
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       <div className="container mx-auto px-4 py-8">
@@ -55,6 +65,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => handleExternalLink(project.live!, 'Live Demo')}
                         className="inline-flex items-center px-6 py-3 highlight-gradient text-white rounded-lg hover:bg-blue-500/20 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-medium interactive-hover"
                       >
                         <ExternalLink className="mr-2 h-5 w-5" />
@@ -66,6 +77,7 @@ const ProjectDetail = ({ project }: ProjectDetailProps) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => handleExternalLink(project.github!, 'GitHub')}
                         className="inline-flex items-center px-6 py-3 border-2 border-purple-400/30 text-gray-300 rounded-lg hover:border-purple-400/50 hover:bg-purple-500/10 transition-all duration-300 font-medium interactive-hover"
                       >
                         <Github className="mr-2 h-5 w-5" />

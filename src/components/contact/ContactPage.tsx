@@ -11,6 +11,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from "@/hooks/use-toast"
 import { useState } from "react"
 import { Mail, MapPin, Send } from 'lucide-react';
+import { trackContactForm } from '../GoogleAnalytics';
 
 const ContactPage = () => {
   const { toast } = useToast()
@@ -35,6 +36,7 @@ const ContactPage = () => {
       })
 
       if (response.ok) {
+        trackContactForm('contact_form');
         toast({
           title: "Success!",
           description: "Your message has been sent successfully.",

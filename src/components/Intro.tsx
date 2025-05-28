@@ -1,6 +1,14 @@
 import { ArrowRight, Github, Linkedin, Download, Mail } from 'lucide-react';
+import { trackExternalLink, trackDownloadResume } from './GoogleAnalytics';
 
 const Intro = () => {
+  const handleResumeDownload = () => {
+    trackDownloadResume();
+  };
+
+  const handleExternalLink = (url: string, platform: string) => {
+    trackExternalLink(url, platform);
+  };
   return (
     <div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
@@ -82,6 +90,7 @@ const Intro = () => {
                 href="https://github.com/deep41"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => handleExternalLink('https://github.com/deep41', 'GitHub')}
                 className="flex items-center px-4 py-2 hover:bg-blue-500/10 transition-all duration-300 hover:scale-110 rounded-lg interactive-hover"
               >
                 <Github className="h-5 w-5" />
@@ -92,6 +101,7 @@ const Intro = () => {
                 href="https://linkedin.com/in/deep41"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => handleExternalLink('https://linkedin.com/in/deep41', 'LinkedIn')}
                 className="flex items-center px-4 py-2 hover:bg-cyan-500/10 transition-all duration-300 hover:scale-110 rounded-lg interactive-hover"
               >
                 <Linkedin className="h-5 w-5" />
@@ -102,6 +112,7 @@ const Intro = () => {
                 href="https://drive.google.com/file/d/1JJkVUbDJ5nUgM---T8w4MxKQgpMeTgWe/view?usp=drive_link"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleResumeDownload}
                 className="flex items-center px-4 py-2 hover:bg-green-500/10 transition-all duration-300 hover:scale-110 rounded-lg interactive-hover"
               >
                 <Download className="h-5 w-5" />
