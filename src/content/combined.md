@@ -8,8 +8,7 @@ Welcome to the consolidated overview of this portfolio site. This document captu
 
 ### Hero
 - Greeting: Hey, I'm Deepak
-- Tagline: Software Engineer passionate about building innovative solutions
-- Availability: Available for new opportunities
+- Tagline: Software Engineer passionate about building innovative solution
 - Primary CTAs:
   - View My Work (/projects)
   - Get In Touch (/contact)
@@ -17,7 +16,6 @@ Welcome to the consolidated overview of this portfolio site. This document captu
 ### Social Links
 - GitHub: https://github.com/deep41
 - LinkedIn: https://linkedin.com/in/deep41
-- Resume: Public Google Drive link
 
 ---
 
@@ -29,7 +27,9 @@ I'm a passionate software developer with a keen interest in building innovative 
 With expertise in full-stack development and a strong foundation in modern technologies, I approach each project as an opportunity to learn and grow while delivering robust solutions that meet business needs.
 
 ### Work Experience
-- Research, GenAI — NC State University (2024 - Present)
+- Front End Engineer, AWS (2025 - Present)
+  - Billing
+- Research, GenAI — NC State University (2024 - 2025)
   - Developed a RAG AI chatbot to analyze course evaluations of students, adopted by 30+ professors.
   - Integrated prompt management into Langfuse, enabling easy prompt switching and performance tracking.
   - Optimized RAG pipeline, boosting accuracy by 30% through efficient file ingestion and retrieval improvements.
@@ -50,13 +50,8 @@ With expertise in full-stack development and a strong foundation in modern techn
 - Bachelor of Computer Science and Engineering — MS Ramaiah Institute of Technology (Aug 2015 - Jul 2019)
 
 ### Certifications
-- AWS Certified Solutions Architect - Associate (2025)
 - Kubernetes Certified Administrator & Developer (2022)
 
-### Skills & Technologies
-- Frontend: React / Next.js, TypeScript, Tailwind CSS, Angular
-- Backend: Node.js, Python, Java, PostgreSQL
-- Cloud & DevOps: AWS, Kubernetes, Docker, CI/CD
 
 ---
 
@@ -84,19 +79,11 @@ With expertise in full-stack development and a strong foundation in modern techn
 
 ---
 
-## Blog
-
-- Hello World (2025-02-18)
-  - Welcome post introducing the blog, tech stack, and deployment approach using GitHub CI/CD.
-  - Notes: Uses shadcn/ui components and React.
-
----
-
 ## Contact
 
 - Contact form (Formspree endpoint) collecting name, email, and message.
 - Direct email: deepak.rajendran123@gmail.com
-- Location: Raleigh, NC, USA
+- Location: New York City, NY, USA
 
 ---
 
@@ -104,13 +91,5 @@ With expertise in full-stack development and a strong foundation in modern techn
 
 - Tech stack: React + Vite + TypeScript + Tailwind CSS
 - UI components: shadcn/ui (cards, buttons, inputs, etc.)
-- Analytics: Google Analytics (GA4) script/component available
-- Background: Interactive canvas art (`public/background.js`)
 
----
 
-## Roadmap / Ideas
-
-- Enhance projects’ detail pages with markdown content rendering in React.
-- Add more blog posts with code examples and diagrams.
-- Improve accessibility audits and color contrast in light theme.
