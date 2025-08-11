@@ -89,7 +89,7 @@ export default function TerminalTabs() {
                     className={`whitespace-nowrap rounded border px-2 py-1 text-xs transition-colors
                       ${activeIdx === idx
                         ? 'border-emerald-700 bg-emerald-900/30 text-emerald-300'
-                        : 'border-zinc-800 bg-zinc-900 text-zinc-300 hover:text-emerald-200'}`}
+                        : 'border-transparent bg-transparent text-zinc-300 hover:text-emerald-200'}`}
                   >
                     {t.label}
                   </button>
