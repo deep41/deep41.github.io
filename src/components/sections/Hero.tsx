@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { heroData } from '../../data/hero';
+import Dock from '../Dock';
 
 export default function Hero() {
   const { greeting, tagline } = heroData;
@@ -30,6 +31,9 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="max-w-6xl mx-auto px-6">
+        <Dock embedded />
       </div>
     </section>
   );

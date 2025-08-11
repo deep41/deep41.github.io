@@ -11,9 +11,9 @@ export default function TerminalTabs() {
   const tabs = useMemo(
     () => [
       { key: 'intro' as TabKey, label: 'Intro', element: <Hero /> },
-      { key: 'projects' as TabKey, label: 'Projects', element: <Projects /> },
-      { key: 'work' as TabKey, label: 'Work', element: <Experience /> },
       { key: 'about' as TabKey, label: 'About', element: <About /> },
+      { key: 'work' as TabKey, label: 'Work', element: <Experience /> },
+      { key: 'projects' as TabKey, label: 'Projects', element: <Projects /> },
       { key: 'contact' as TabKey, label: 'Contact', element: <Contact /> },
     ],
     []
@@ -64,10 +64,10 @@ export default function TerminalTabs() {
   }, [tabs.length]);
 
   return (
-    <div className="relative z-10">
-      <div className="mx-auto max-w-6xl px-3 md:px-6">
-        <div className="rounded-lg border border-zinc-800 bg-black/60 shadow-lg">
-          <div className="flex items-center justify-between border-b border-zinc-800 px-3 py-2">
+    <div className="relative z-10 h-full">
+      <div className="mx-auto max-w-6xl h-full px-3 md:px-6">
+        <div className="flex h-full flex-col rounded-lg border border-zinc-800 bg-black/60 shadow-lg">
+          <div className="flex shrink-0 items-center justify-between border-b border-zinc-800 px-3 py-2">
             <div className="flex items-center gap-2">
               <div className="flex gap-1 pr-2">
                 <span className="inline-block h-2.5 w-2.5 rounded-full bg-red-500/80" aria-hidden />
@@ -101,7 +101,7 @@ export default function TerminalTabs() {
             </div>
           </div>
 
-          <div className="min-h-[60vh]">{tabs[activeIdx].element}</div>
+          <div className="min-h-0 grow overflow-auto p-2 md:p-4">{tabs[activeIdx].element}</div>
         </div>
       </div>
     </div>
