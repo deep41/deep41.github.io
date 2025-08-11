@@ -72,7 +72,6 @@ export default function Experience() {
                 <div>
                   <h3 className="text-xl font-semibold text-zinc-100">{active.role}</h3>
                   <div className="mt-1 text-xs text-zinc-500">
-                    {active.org && <span className="mr-2">{active.org}</span>}
                     {active.period && <span>{active.period}</span>}
                   </div>
                 </div>

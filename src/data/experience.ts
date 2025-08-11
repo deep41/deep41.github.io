@@ -24,7 +24,7 @@ export const experienceData: ExperienceItem[] = [
   },
   {
     role: 'Software Engineer',
-    org: 'GE HealthCare (contractor)',
+    org: 'GE HealthCare',
     period: '2022 - 2024',
     points: [
       'Transitioned a monolithic frontend to micro frontends, achieving a 90% reduction in load time.',
