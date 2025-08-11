@@ -1,26 +1,102 @@
-import { experienceData } from '../../data/experience';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { experienceData, type ExperienceItem } from '../../data/experience';
 
 export default function Experience() {
-  const EXPERIENCE = experienceData;
+  const EXPERIENCE: ExperienceItem[] = useMemo(() => experienceData, []);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+  const listRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setActiveIdx((i) => (i + 1) % EXPERIENCE.length);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setActiveIdx((i) => (i - 1 + EXPERIENCE.length) % EXPERIENCE.length);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [EXPERIENCE.length]);
+
+  useEffect(() => {
+    const container = listRef.current;
+    if (!container) return;
+    const selected = container.querySelector<HTMLButtonElement>(`[data-index="${activeIdx}"]`);
+    if (selected) selected.scrollIntoView({ block: 'nearest' });
+  }, [activeIdx]);
+
+  const active = EXPERIENCE[activeIdx];
+
   return (
     <section className="py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-10 text-zinc-100">Experience</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {EXPERIENCE.map((e) => (
-            <article key={e.role} className="border border-zinc-800 rounded-lg p-6 bg-zinc-950/60 shadow-sm">
-              <div className="flex items-baseline justify-between">
-                <h3 className="text-xl font-semibold text-zinc-100">{e.role}</h3>
-                <span className="text-sm text-zinc-500">{e.period}</span>
+        <div className="mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-100">Experience</h2>
+          <p className="text-zinc-400">Use
+            <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">↑</span>
+            and
+            <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">↓</span>
+            to navigate
+          </p>
+        </div>
+
+        <div className="grid grid-cols-12 gap-2 md:gap-6">
+          {/* Left list */}
+          <div className="col-span-12 md:col-span-4 lg:col-span-3">
+            <div
+              ref={listRef}
+              role="listbox"
+              aria-label="Experience list"
+              className="max-h-[65vh] overflow-auto pr-1"
+            >
+              {EXPERIENCE.map((e, idx) => {
+                const isActive = idx === activeIdx;
+                return (
+                  <button
+                    key={`${e.role}-${e.org ?? idx}`}
+                    data-index={idx}
+                    role="option"
+                    aria-selected={isActive}
+                    onClick={() => setActiveIdx(idx)}
+                    className={`flex w-full items-center gap-2 px-2.5 py-2 font-mono text-sm transition-colors
+                      ${isActive ? 'bg-emerald-900/15 text-emerald-300' : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/30'}`}
+                  >
+                    <span className={`inline-block h-1.5 w-1.5 rounded-full ${isActive ? 'bg-emerald-500/80' : 'bg-zinc-700'}`} />
+                    <span className="truncate">{e.org ?? e.role}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Right details with single demarker */}
+          <div className="col-span-12 md:col-span-8 lg:col-span-9 md:border-l md:border-zinc-800 md:pl-6">
+            <div className="max-h-[65vh] overflow-auto pr-2">
+              <div className="mb-2 flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold text-zinc-100">{active.role}</h3>
+                  <div className="mt-1 text-xs text-zinc-500">
+                    {active.org && <span className="mr-2">{active.org}</span>}
+                    {active.period && <span>{active.period}</span>}
+                  </div>
+                </div>
+                <span className="text-[10px] text-zinc-500">{activeIdx + 1} / {EXPERIENCE.length}</span>
               </div>
-              <p className="text-zinc-400 mb-3">{e.org}</p>
-              <ul className="list-disc pl-5 space-y-1 text-zinc-300">
-                {e.points.map((pt) => (
-                  <li key={pt}>{pt}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+
+              {active.points?.length > 0 && (
+                <div className="mb-6">
+                  <div className="mb-2 text-xs uppercase tracking-wider text-zinc-500">Highlights</div>
+                  <ul className="list-disc space-y-1 pl-5 text-zinc-300">
+                    {active.points.map((pt: string, i: number) => (
+                      <li key={i}>{pt}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
