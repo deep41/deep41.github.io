@@ -34,12 +34,6 @@ export default function Experience() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-4 md:mb-6">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-100">Experience</h2>
-          <p className="text-zinc-400">Use
-            <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">↑</span>
-            and
-            <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">↓</span>
-            to navigate
-          </p>
         </div>
 
         <div className="grid grid-cols-12 gap-2 md:gap-6">
@@ -98,6 +92,8 @@ export default function Experience() {
             </div>
           </div>
         </div>
+
+        
       </div>
     </section>
   );

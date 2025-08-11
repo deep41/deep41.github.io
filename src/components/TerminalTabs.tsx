@@ -97,11 +97,24 @@ export default function TerminalTabs() {
               </div>
             </div>
             <div className="hidden md:block text-[10px] text-zinc-500">
-              Use ← → to switch tabs
+              Use 
+              <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">←</span>
+              and
+              <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">→</span>
+              to switch tabs
             </div>
           </div>
 
-          <div className="min-h-0 grow overflow-auto p-2 md:p-4">{tabs[activeIdx].element}</div>
+          <div className="relative min-h-0 grow overflow-auto pb-12 p-2 md:p-4">
+            {tabs[activeIdx].element}
+            {['work','projects'].includes(tabs[activeIdx].key) && (
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 border-t border-zinc-800 bg-black/60 backdrop-blur supports-[backdrop-filter]:bg-black/40">
+                <div className="px-4 py-2 text-center text-[10px] text-zinc-500">
+                  Use <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">↑</span> and <span className="mx-1 inline-flex items-center rounded border border-zinc-700 bg-zinc-900 px-1.5 py-0.5 text-xs">↓</span> to navigate
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
