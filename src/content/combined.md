@@ -8,7 +8,7 @@ Welcome to the consolidated overview of this portfolio site. This document captu
 
 ### Hero
 - Greeting: Hey, I'm Deepak
-- Tagline: Software Engineer passionate about building innovative solution
+- Tagline: Welcome to my corner of the internet
 - Primary CTAs:
   - View My Work (/projects)
   - Get In Touch (/contact)

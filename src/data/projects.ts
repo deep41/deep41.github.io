@@ -46,18 +46,6 @@ export const projectsData: Project[] = [
       '35+ active users',
     ],
   },
-  {
-    title: 'Tetris',
-    desc: 'Classic Tetris implemented with React and TypeScript; includes rotation, line clearing, levels, and score tracking.',
-    role: 'Frontend',
-    period: '2021',
-    tags: ['React', 'TypeScript'],
-    highlights: [
-      'Piece rotation with wall kicks',
-      'Level progression and scoring',
-      'Keyboard controls with smooth animations',
-    ],
-  },
 ];
 
 

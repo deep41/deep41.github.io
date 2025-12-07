@@ -5,7 +5,7 @@ export type HeroData = {
 
 export const heroData: HeroData = {
   greeting: "Hey, I'm Deepak",
-  tagline: 'Software Engineer passionate about building innovative solution',
+  tagline: 'Welcome to my corner of the internet',
 };
 
 
