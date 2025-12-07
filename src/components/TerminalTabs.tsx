@@ -130,10 +130,10 @@ export default function TerminalTabs() {
   };
 
   return (
-    <div className="relative z-10">
-      <div className="mx-auto max-w-6xl px-3 md:px-6">
+    <div className="relative z-10 h-full">
+      <div className="mx-auto flex h-full max-w-6xl px-3 md:px-6">
         <div
-          className="flex min-h-screen flex-col rounded-lg border border-zinc-800 bg-black/60 shadow-lg"
+          className="flex h-full min-h-0 flex-1 flex-col rounded-lg border border-zinc-800 bg-black/60 shadow-lg"
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
